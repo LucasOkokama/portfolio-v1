@@ -9,6 +9,9 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
+      backgroundImage: {
+        'texture': "url('/bg-texture.png')"
+      },
       colors: {},
     },
   },

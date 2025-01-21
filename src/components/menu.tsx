@@ -1,21 +1,13 @@
-"use client";
-
 import { Rethink_Sans } from "next/font/google";
-import { useEffect, useState } from "react";
+import DarkModeToggle from "./dark-mode-toggle";
 
 const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
 
 export default function Menu() {
   const menuItems = ["About", "Skills", "Projects", "Statistics"];
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    setIsDarkMode(document.documentElement.classList.contains("dark"));
-    console.log(isDarkMode);
-  }, []);
 
   return (
-    <nav className="flex w-full items-stretch justify-between rounded-xl bg-neutral-200/20 px-8 py-2 shadow-md dark:bg-neutral-800/20 dark:shadow-neutral-100/[0.03]">
+    <nav className="flex w-full items-stretch justify-between rounded-xl bg-neutral-200/20 px-8 py-2 shadow-md duration-800 dark:bg-neutral-800/20 dark:shadow-neutral-100/[0.03]">
       <div className="flex">
         <svg
           className="w-[17px]"
@@ -51,7 +43,7 @@ export default function Menu() {
       </div>
       <div className="flex items-center gap-4">
         <ul
-          className={`${rethinkSans.className} flex gap-6 font-semibold text-[15px] text-neutral-400 dark:text-neutral-500`}
+          className={`${rethinkSans.className} flex gap-5 text-[15px] font-semibold text-neutral-400 dark:text-neutral-500`}
         >
           {menuItems.map((item) => (
             <li
@@ -63,29 +55,7 @@ export default function Menu() {
           ))}
         </ul>
         <div className="h-[75%] w-[1px] bg-neutral-300 dark:bg-neutral-800"></div>
-        <div className="cursor-pointer p-3">
-          {isDarkMode && (
-            <svg
-              className="w-4"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path d="M283.2 512c79 0 151.1-35.9 198.9-94.8 7.1-8.7-.6-21.4-11.6-19.4-124.2 23.7-238.3-71.6-238.3-197 0-72.2 38.7-138.6 101.5-174.4 9.7-5.5 7.3-20.2-3.8-22.2A258.2 258.2 0 0 0 283.2 0c-141.3 0-256 114.5-256 256 0 141.3 114.5 256 256 256z" />
-            </svg>
-          )}
-
-          {!isDarkMode && (
-            <svg
-              className="w-4"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" />
-            </svg>
-          )}
-        </div>
+        <DarkModeToggle />
       </div>
     </nav>
   );

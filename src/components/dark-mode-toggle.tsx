@@ -66,7 +66,7 @@ export default function DarkModeToggle() {
       className="cursor-pointer rounded-md p-2 duration-500 hover:bg-neutral-200/80 dark:hover:bg-neutral-800"
     >
       <svg
-        className="w-[18px]"
+        className="w-[22.5px]"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960"

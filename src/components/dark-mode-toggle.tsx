@@ -61,10 +61,12 @@ export default function DarkModeToggle() {
   }
 
   return (
-    <div
+    // Button that triggers the changeTheme()
+    <button
       onClick={() => changeTheme()}
       className="cursor-pointer rounded-md p-2 duration-500 hover:bg-neutral-200/80 dark:hover:bg-neutral-800"
     >
+      {/* Theme icon */}
       <svg
         className="w-[22.5px]"
         fill="currentColor"
@@ -81,6 +83,6 @@ export default function DarkModeToggle() {
           />
         </AnimatePresence>
       </svg>
-    </div>
+    </button>
   );
 }

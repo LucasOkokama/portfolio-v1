@@ -82,11 +82,13 @@ export default function MenuMobile() {
   ];
 
   return (
+    // Button that triggers the menu mobile
     <button
       onClick={() => setIsMenuVisible(!isMenuVisible)}
       onBlur={() => setIsMenuVisible(false)}
       className="relative rounded-md p-2 hover:bg-neutral-200/80 dark:hover:bg-neutral-800"
     >
+      {/* Hamburger menu icon */}
       <svg
         className="w-[24px]"
         xmlns="http://www.w3.org/2000/svg"
@@ -99,6 +101,7 @@ export default function MenuMobile() {
       <nav>
         <AnimatePresence mode="wait">
           {isMenuVisible && (
+            // Menu mobile container
             <motion.ul
               variants={menuFadeIn}
               initial="hidden"
@@ -107,12 +110,14 @@ export default function MenuMobile() {
               className="absolute right-0 top-12 overflow-hidden rounded-lg border border-neutral-300/80 bg-neutral-200/35 p-1 font-semibold text-neutral-400 dark:border-neutral-700/50 dark:bg-neutral-800/50 dark:text-neutral-500"
             >
               {menuItems.map((item, index) => (
+                // Menu mobile items
                 <motion.li
                   variants={menuItemsFadeIn}
                   key={index}
                   custom={index}
                   className="flex cursor-pointer items-center gap-3 rounded-lg p-2 text-sm transition-colors duration-200 hover:bg-neutral-300/70 hover:text-neutral-800 dark:hover:bg-neutral-700/50 dark:hover:text-neutral-200"
                 >
+                  {/* Items icons */}
                   <svg
                     className="w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -121,6 +126,7 @@ export default function MenuMobile() {
                   >
                     <path d={item.icon} />
                   </svg>
+                  {/* Items text */}
                   {item.name}
                 </motion.li>
               ))}

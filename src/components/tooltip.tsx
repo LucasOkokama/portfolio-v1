@@ -39,6 +39,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
         onMouseMove={({ clientX }) => {
           if (!childrenRef.current || !textRef.current) return;
 
+          // Make the tooltip appear to the left or right of the mouse depending on its position
           if (position === "leftOrRight") {
             const windowWidthMiddle = window.innerWidth / 2;
 
@@ -49,12 +50,15 @@ export default function Tooltip({ children, text, y, position }: Props) {
               const { right } = childrenRef.current.getBoundingClientRect();
               textRef.current.style.left = clientX - right - 10 + "px";
             }
-          } else if (position === "center") {
+          }
+          // Make the tooltip stay centered with the mouse
+          else if (position === "center") {
             const { left } = childrenRef.current.getBoundingClientRect();
             const textWidth = textRef.current.getBoundingClientRect().width / 2;
             textRef.current.style.left = clientX - left - textWidth + "px";
           }
         }}
+        // Show or hide the tooltip
         onMouseEnter={() => {
           setIsTooltipVisible(true);
         }}
@@ -66,6 +70,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
       </div>
       <AnimatePresence mode="wait">
         {isTooltipVisible && (
+          // Tooltip
           <motion.span
             variants={tooltipFadeIn}
             initial="hidden"
@@ -75,7 +80,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
             style={{
               marginTop: `${y}px`,
             }}
-            className="pointer-events-none absolute left-0 whitespace-nowrap rounded-md bg-neutral-800/90 px-3 py-[6px] text-sm"
+            className="pointer-events-none absolute left-0 whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/90 px-3 py-[6px] text-sm dark:border-neutral-700 dark:bg-neutral-800/90"
           >
             {text}
           </motion.span>

@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { Ubuntu_Sans_Mono } from "next/font/google";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ubuntoSansMono = Ubuntu_Sans_Mono({
   subsets: ["latin"],
@@ -17,6 +17,7 @@ const nameFadeIn = {
 export default function Name() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [originalName, setOriginalName] = useState("");
 
   const alphabet =
     "�0123456789�abcdefghijklmnopqrstuvwxyz�ABCDEFGHIJKLMNOPQRSTUVWXYZ�.,;:-_!?@#$%^&*()=+|<>~`�";
@@ -53,6 +54,14 @@ export default function Name() {
     }
   }
 
+  // Get name based on the window innerWidth
+  useEffect(() => {
+    const name =
+      window.innerWidth < 640 ? "Lucas Okokama" : "Lucas Kazuhiro Okokama";
+    setOriginalName(name);
+  }, []);
+
+  // Runs initial decrypt effect
   useEffect(() => {
     decryptEffect();
 
@@ -62,7 +71,7 @@ export default function Name() {
         clearInterval(intervalRef.current);
       }
     };
-  }, []);
+  }, [originalName]);
 
   return (
     // Name
@@ -74,12 +83,9 @@ export default function Name() {
     >
       <h1
         ref={nameRef}
-        className={`${ubuntoSansMono.className} w-fit bg-gradient-to-r from-[#F93075] to-[#8c00ff] bg-clip-text text-[42px] font-extrabold text-transparent sm:text-[42px]`}
-        data-original-name={
-          window.innerWidth < 640 ? "Lucas Okokama" : "Lucas Kazuhiro Okokama"
-        }
-      >
-      </h1>
+        className={`${ubuntoSansMono.className} w-fit bg-gradient-to-r from-[#A259F6] to-[#0BB3D5] bg-clip-text text-[38px] font-extrabold text-transparent sm:text-[42px]`}
+        data-original-name={originalName}
+      ></h1>
     </motion.div>
   );
 }

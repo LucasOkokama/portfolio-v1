@@ -62,7 +62,7 @@ export default function Role() {
   }, []);
 
   return (
-    <h3 className="flex items-center gap-[2px] text-2xl font-bold">
+    <h3 className="flex items-center gap-[2px] text-xl font-bold h-full">
       <div className="relative">
         {/* Role text */}
         <span
@@ -82,8 +82,10 @@ export default function Role() {
         variants={cursorBlinking}
         initial="hidden"
         animate="visible"
-        className="block h-[80%] w-[3px] bg-slate-600 text-3xl text-blue-500"
-      ></motion.span>
+        className="block h-[85%] w-[3px] select-none bg-slate-600 text-blue-500 text-transparent"
+      >
+        
+      </motion.span>
     </h3>
   );
 }

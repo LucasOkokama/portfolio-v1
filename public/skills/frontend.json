@@ -1,0 +1,36 @@
+[
+  [
+    {
+      "name": "HTML",
+      "file": "html.svg",
+      "link": "#"
+    },
+    {
+      "name": "CSS",
+      "file": "css.svg",
+      "link": "#"
+    },
+    {
+      "name": "JavaScript",
+      "file": "javascript.svg",
+      "link": "#"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.svg",
+      "link": "https://www.typescriptlang.org/"
+    }
+  ],
+  [
+    {
+      "name": "Angular",
+      "file": "angular.svg",
+      "link": "https://angular.dev/"
+    },
+    {
+      "name": "TailwindCSS",
+      "file": "tailwindcss.svg",
+      "link": "https://tailwindcss.com/"
+    }
+  ]
+]

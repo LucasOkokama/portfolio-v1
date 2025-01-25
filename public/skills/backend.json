@@ -1,0 +1,48 @@
+[
+  [
+    {
+      "name": "Python",
+      "file": "python.svg",
+      "link": "https://www.python.org/"
+    },
+    {
+      "name": "Java",
+      "file": "java.svg",
+      "link": "https://www.java.com/en/"
+    },
+    {
+      "name": "PHP",
+      "file": "php.svg",
+      "link": "https://www.php.net/"
+    },
+    {
+      "name": "C",
+      "file": "c.svg",
+      "link": "#"
+    }
+  ],
+  [
+    {
+      "name": "Spring Boot",
+      "file": "springboot.svg",
+      "link": "https://spring.io/"
+    },
+    {
+      "name": "Flask",
+      "file": "flask.svg",
+      "link": "https://flask.palletsprojects.com/en/stable/"
+    }
+  ],
+  [
+    {
+      "name": "Pandas",
+      "file": "pandas.svg",
+      "link": "https://pandas.pydata.org/"
+    },
+    {
+      "name": "Plotly",
+      "file": "plotly.svg",
+      "link": "https://plotly.com/"
+    }
+  ]
+]

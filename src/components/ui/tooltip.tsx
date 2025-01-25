@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface Props {
   children: ReactNode;
@@ -14,12 +14,10 @@ const tooltipFadeIn = {
   hidden: {
     opacity: 0,
     y: -15,
-    scale: 0.7,
   },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
       type: "spring",
       bounce: 0.7,
@@ -30,47 +28,60 @@ const tooltipFadeIn = {
 
 export default function Tooltip({ children, text, y, position }: Props) {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState(0);
   const childrenRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (isTooltipVisible && textRef.current && childrenRef.current) {
+      // The distance between the child and the left side of the window
+      const { left } = childrenRef.current.getBoundingClientRect();
+      // Width of the tooltip
+      const { width } = textRef.current.getBoundingClientRect();
+
+      // Recalcular a posição do tooltip com base no lado
+      const updateTooltipPosition = (clientX: number) => {
+
+        const windowWidthMiddle = window.innerWidth / 2;
+
+        // Make the tooltip appear to the left or right of the mouse depending on its position
+        if (position === "leftOrRight") {
+          if (clientX < windowWidthMiddle) {
+            setTooltipPosition(clientX - left - 8);
+          } else {
+            setTooltipPosition(clientX - left - width + 16);
+          }
+        }
+        // Make the tooltip stay centered with the mouse
+        else if (position === "center") {
+          setTooltipPosition((clientX - left - width) / 2);
+        }
+      };
+
+      const handleMouseMove = (event: MouseEvent) => {
+        updateTooltipPosition(event.clientX);
+      };
+
+      // Add a listener to track the mouse movement
+      document.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
+  }, [isTooltipVisible]);
+
   return (
     <div className="relative">
       <div
         ref={childrenRef}
-        onMouseMove={({ clientX }) => {
-          if (!childrenRef.current || !textRef.current) return;
-
-          // Make the tooltip appear to the left or right of the mouse depending on its position
-          if (position === "leftOrRight") {
-            const windowWidthMiddle = window.innerWidth / 2;
-
-            if (clientX < windowWidthMiddle) {
-              const { left } = childrenRef.current.getBoundingClientRect();
-              textRef.current.style.left = clientX - left + "px";
-            } else {
-              const { right } = childrenRef.current.getBoundingClientRect();
-              textRef.current.style.left = clientX - right - 10 + "px";
-            }
-          }
-          // Make the tooltip stay centered with the mouse
-          else if (position === "center") {
-            const { left } = childrenRef.current.getBoundingClientRect();
-            const textWidth = textRef.current.getBoundingClientRect().width / 2;
-            textRef.current.style.left = clientX - left - textWidth + "px";
-          }
-        }}
-        // Show or hide the tooltip
-        onMouseEnter={() => {
-          setIsTooltipVisible(true);
-        }}
-        onMouseLeave={() => {
-          setIsTooltipVisible(false);
-        }}
+        onMouseEnter={() => setIsTooltipVisible(true)}
+        onMouseLeave={() => setIsTooltipVisible(false)}
       >
         {children}
       </div>
       <AnimatePresence mode="wait">
         {isTooltipVisible && (
-          // Tooltip
           <motion.span
             variants={tooltipFadeIn}
             initial="hidden"
@@ -79,8 +90,9 @@ export default function Tooltip({ children, text, y, position }: Props) {
             ref={textRef}
             style={{
               marginTop: `${y}px`,
+              left: `${tooltipPosition}px`,
             }}
-            className="pointer-events-none absolute left-0 whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/90 px-3 py-[6px] text-sm dark:border-neutral-700 dark:bg-neutral-800/90"
+            className="pointer-events-none absolute left-0 z-[1] whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/80 px-3 py-[6px] text-sm backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/80"
           >
             {text}
           </motion.span>

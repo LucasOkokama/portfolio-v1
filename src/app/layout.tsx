@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark relative">
       <body
-        className={`${rethinkSans.className} before:bg-texture bg-white text-black transition-colors duration-500 before:absolute before:z-[-1] before:h-full before:w-full before:opacity-[3%] dark:bg-neutral-950 dark:text-white`}
+        className={`${rethinkSans.className} bg-white text-black transition-colors duration-500 before:absolute before:z-[-1] before:h-full before:w-full before:bg-texture before:opacity-[3%] dark:bg-neutral-950 dark:text-white`}
       >
         {children}
       </body>

@@ -2,6 +2,7 @@
 
 import About from "@/components/about/about";
 import Menu from "@/components/menu/menu";
+import Skills from "@/components/skills/skills";
 import { motion } from "motion/react";
 
 const menuFadeIn = {
@@ -19,8 +20,8 @@ const menuFadeIn = {
 export default function Home() {
   return (
     <div className="flex h-full w-full justify-center px-5">
-      <div className="w-full max-w-5xl">
-        <div className="flex w-full flex-col md:h-screen">
+      <div className="h-full w-full max-w-5xl">
+        <div className="flex w-full flex-col">
           <motion.div
             variants={menuFadeIn}
             initial="hidden"
@@ -29,8 +30,16 @@ export default function Home() {
           >
             <Menu />
           </motion.div>
-          <div className="flex h-full w-full items-center justify-center pt-24 md:pt-0">
-            <About />
+          <div className="flex justify-center">
+            <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[25vh] pt-24 md:pt-0">
+              <div className="flex min-h-screen w-full items-center">
+                <About />
+              </div>
+
+              <div className="w-full">
+                <Skills />
+              </div>
+            </div>
           </div>
         </div>
       </div>

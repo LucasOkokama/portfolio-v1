@@ -41,7 +41,6 @@ export default function Tooltip({ children, text, y, position }: Props) {
 
       // Recalcular a posição do tooltip com base no lado
       const updateTooltipPosition = (clientX: number) => {
-
         const windowWidthMiddle = window.innerWidth / 2;
 
         // Make the tooltip appear to the left or right of the mouse depending on its position
@@ -54,7 +53,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
         }
         // Make the tooltip stay centered with the mouse
         else if (position === "center") {
-          setTooltipPosition((clientX - left - width) / 2);
+          setTooltipPosition(clientX - left - width / 2);
         }
       };
 
@@ -92,7 +91,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
               marginTop: `${y}px`,
               left: `${tooltipPosition}px`,
             }}
-            className="pointer-events-none absolute left-0 z-[1] whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/80 px-3 py-[6px] text-sm backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/80"
+            className="pointer-events-none absolute left-0 z-[1] whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/80 px-3 py-[6px] text-sm text-neutral-900 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/80 dark:text-white"
           >
             {text}
           </motion.span>

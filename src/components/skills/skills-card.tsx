@@ -91,6 +91,7 @@ export default function SkillsCard({ type }: { type: string }) {
                       animate={isInView ? "visible" : "hidden"}
                       custom={[outerIndex, innerIndex]}
                       key={innerIndex}
+                      className="select-none"
                     >
                       <a href={item.link} target="_black">
                         <img

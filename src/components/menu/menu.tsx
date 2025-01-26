@@ -1,11 +1,40 @@
+"use client";
+
 import DarkModeToggle from "../ui/dark-mode-toggle";
 import MyLogo from "../ui/my-logo";
 import MenuMobile from "./menu-mobile";
 import Tooltip from "../ui/tooltip";
 import styles from "./css/menu.module.css";
+import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Menu() {
   const menuItems = ["About", "Skills", "Projects", "Statistics"];
+
+  useEffect(() => {
+    // Scrolls to a specific section
+    const scrollToHash = (section: string) => {
+      const element = document.getElementById(section);
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+      window.history.pushState(null, "", `#${section}`);
+    };
+
+    // Shortcut to change the section (Key "1" => Section 1, Key "2" => Section 2, etc...)
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const section = menuItems[Number(event.key) - 1];
+      if (section) {
+        scrollToHash(section.toLowerCase());
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <nav
@@ -14,13 +43,16 @@ export default function Menu() {
       <MyLogo />
       <div className="flex items-center gap-4">
         <ul className="hidden gap-5 text-[15px] font-semibold text-neutral-400 sm:flex dark:text-neutral-500">
-          {menuItems.map((item) => (
-            <li
-              key={item}
-              className="cursor-pointer p-2 transition-colors duration-200 hover:text-neutral-800 dark:hover:text-neutral-200"
-            >
-              {item}
-            </li>
+          {menuItems.map((item, index) => (
+            <div className="z-30" key={item}>
+              <Tooltip text={(index + 1).toString()} y={10} position="center">
+                <Link href={`#${item.toLowerCase()}`}>
+                  <li className="cursor-pointer p-2 transition-colors duration-200 hover:text-neutral-800 dark:hover:text-neutral-200">
+                    {item}
+                  </li>
+                </Link>
+              </Tooltip>
+            </div>
           ))}
         </ul>
 

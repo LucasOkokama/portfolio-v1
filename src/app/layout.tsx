@@ -3,11 +3,8 @@ import { Rethink_Sans, Geist, Inter, Lexend } from "next/font/google";
 import "./globals.css";
 
 const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
-
 const geistSans = Geist({ subsets: ["latin"] });
-
 const inter = Inter({ subsets: ["latin"] });
-
 const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark relative">
+    <html lang="en" className="dark relative scroll-smooth">
       <body
         className={`${rethinkSans.className} bg-white text-black transition-colors duration-500 before:absolute before:z-[-1] before:h-full before:w-full before:bg-texture before:opacity-[3%] dark:bg-neutral-950 dark:text-white`}
       >

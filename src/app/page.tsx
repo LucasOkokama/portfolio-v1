@@ -3,6 +3,7 @@
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
 import Menu from "@/components/menu/menu";
+import Projects from "@/components/projects/projects";
 import Skills from "@/components/skills/skills";
 import { motion } from "motion/react";
 
@@ -32,13 +33,17 @@ export default function Home() {
             <Menu />
           </motion.div>
           <div className="flex justify-center">
-            <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[25vh] pt-24 md:pt-0">
+            <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[50vh] pt-24 md:pt-0">
               <div id="about" className="flex min-h-screen w-full items-center">
                 <About />
               </div>
 
               <div id="skills" className="w-full">
                 <Skills />
+              </div>
+
+              <div id="projects" className="w-full">
+                <Projects />
               </div>
             </div>
           </div>

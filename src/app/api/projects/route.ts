@@ -8,11 +8,11 @@ interface Project {
   type: string;
   intro: string;
   info: string[];
-  funFact: string;
+  funFact: string | null;
   techStack: string[];
-  design: string;
+  design: string | null;
   github: string;
-  deploy: string;
+  deploy: string | null;
   startDate: string;
   finishDate: string | null;
 }

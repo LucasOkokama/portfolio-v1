@@ -69,7 +69,7 @@ export default function SkillsCard({ type }: { type: string }) {
             </h1>
           </div>
           {/* Techs */}
-          <motion.div className="z-[2] flex flex-col gap-6">
+          <div className="z-[2] flex flex-col gap-6">
             {stackData.map((subArray, outerIndex) => (
               // Type lines (Languages, Frameworks, Libraries, IDE, Databases etc...)
               <div
@@ -113,7 +113,7 @@ export default function SkillsCard({ type }: { type: string }) {
                 ))}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

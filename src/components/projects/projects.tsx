@@ -8,6 +8,7 @@ import Info from "./info";
 import NameType from "./name-type";
 import ExternalLinks from "./external-links";
 import FunFact from "./fun-fact";
+import { motion } from "motion/react";
 
 interface Project {
   id: string;
@@ -15,14 +16,29 @@ interface Project {
   type: string;
   intro: string;
   info: string[];
-  funFact: string;
+  funFact: string | null;
   techStack: string[];
-  design: string;
+  design: string | null;
   github: string;
-  deploy: string;
+  deploy: string | null;
   startDate: string;
   finishDate: string | null;
 }
+
+const bannerFadeIn = {
+  hidden: { opacity: 0, x: -60, y: 60, scale: 0.7 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.3,
+      duration: 1,
+    },
+  },
+};
 
 export default function Projects() {
   const [loading, setLoading] = useState<Project[] | null>(null);
@@ -59,11 +75,11 @@ export default function Projects() {
     <div className="flex w-full flex-col items-center gap-14">
       <div className="flex w-full items-center justify-center gap-12">
         {/* Divider 1 */}
-        <div className="h-[2px] w-[25%] rounded-full bg-neutral-200 dark:bg-neutral-800/60"></div>
+        <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-transparent to-neutral-200 dark:to-neutral-800"></div>
         {/* Title */}
         <GlitchText text="Projetos" />
         {/* Divider 2 */}
-        <div className="h-[2px] w-[25%] rounded-full bg-neutral-200 dark:bg-neutral-800/60"></div>
+        <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
       </div>
 
       <div className="max-w-xl lg:max-w-none">
@@ -84,13 +100,18 @@ export default function Projects() {
               </div>
               <div className="flex flex-col gap-8 lg:h-[500px] lg:flex-row">
                 {/* Project Banner */}
-                <div className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80">
+                <motion.div
+                  variants={bannerFadeIn}
+                  initial="hidden"
+                  animate="visible"
+                  className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80"
+                >
                   <img
                     src={`/projects/preview/${project.id}/banner.png`}
                     alt=""
                     className="object-contain"
                   />
-                </div>
+                </motion.div>
 
                 <div className="relative flex w-full flex-col items-center gap-8 pb-3 pt-1 lg:justify-between lg:gap-0">
                   <div className="flex flex-col gap-5">
@@ -111,7 +132,7 @@ export default function Projects() {
                   </div>
 
                   {/* Tech stack */}
-                  <div>
+                  <div className="w-full">
                     <TechStack techStack={project.techStack} />
                   </div>
                 </div>

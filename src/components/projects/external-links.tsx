@@ -1,9 +1,9 @@
 import Tooltip from "../ui/tooltip";
 
 export default function ExternalLinks(props: {
-  design: string;
-  github: string;
-  deploy: string;
+  design: string | null;
+  github: string | null;
+  deploy: string | null;
 }) {
   const tooltipText = ["Design", "GitHub", "Deploy"];
 
@@ -62,14 +62,17 @@ export default function ExternalLinks(props: {
 
   return (
     <div className="flex h-full items-center gap-4 pl-3">
-      {Object.entries(props).map(([key, value], index) => (
-        <Tooltip text={tooltipText[index]} y={14} position="center" key={key}>
-          <a href={value} target="_blank" className="capitalize">
-            {getIcon(key)}
-            <div className=""></div>
-          </a>
-        </Tooltip>
-      ))}
+      {Object.entries(props).map(([key, value], index) => {
+        if (value === null) return null;
+        return (
+          <Tooltip text={tooltipText[index]} y={14} position="center" key={key}>
+            <a href={value} target="_blank" className="capitalize">
+              {getIcon(key)}
+              <div className=""></div>
+            </a>
+          </Tooltip>
+        );
+      })}
     </div>
   );
 }

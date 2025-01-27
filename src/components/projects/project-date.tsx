@@ -56,15 +56,15 @@ export default function ProjectDate({
           <div className="flex items-center gap-[3px] whitespace-nowrap rounded-full bg-neutral-700/70 px-2 py-[3px] text-neutral-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
+              width="13"
+              height="13"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 3a1 1 0 0 1 .608 .206l.1 .087l2.706 2.707h6.586a3 3 0 0 1 2.995 2.824l.005 .176v8a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-11a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" />
             </svg>
-            <span className={`${lexend.className} text-xs`}>Parado</span>
+            <span className={`${lexend.className} text-xs`}>Finalizado</span>
           </div>
         );
     }

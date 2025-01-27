@@ -1,7 +1,11 @@
 import { Lexend } from "next/font/google";
 const lexend = Lexend({ subsets: ["latin"] });
 
-export default function FunFact({ funFact }: { funFact: string }) {
+export default function FunFact({ funFact }: { funFact: string | null }) {
+  if (funFact === null) {
+    return null;
+  }
+
   return (
     <div
       className={`${lexend.className} flex max-w-[500px] gap-2 rounded-xl bg-neutral-900/80 px-5 py-3 text-xs leading-5 text-neutral-500`}

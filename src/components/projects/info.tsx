@@ -1,12 +1,33 @@
 import { Inter } from "next/font/google";
+import { motion } from "motion/react";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const infoFadeIn = {
+  hidden: { opacity: 0, y: 20, scale: 0.7 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+      delay: 0.2 * index,
+    },
+  }),
+};
 
 export default function Info({ info }: { info: string[] }) {
   return (
     <div className="flex flex-col gap-4">
       {info.map((item: string, index) => (
-        <div className="flex items-start gap-2 text-neutral-300" key={index}>
+        <motion.div
+          variants={infoFadeIn}
+          initial="hidden"
+          animate="visible"
+          custom={index}
+          className="flex items-start gap-2 text-neutral-300"
+          key={index}
+        >
           {/* Spark icon */}
           <svg
             className="mt-[5px]"
@@ -22,7 +43,7 @@ export default function Info({ info }: { info: string[] }) {
           <p className={`${inter.className} w-full text-sm leading-[26px]`}>
             {item}
           </p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

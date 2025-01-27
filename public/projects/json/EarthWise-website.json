@@ -1,0 +1,18 @@
+{
+  "id": "EarthWise-website",
+  "name": "EarthWise",
+  "type": "Tempo integral",
+  "intro": "Um site simples sobre preservação ambiental, desenvolvido como projeto final do curso de Análise e Desenvolvimento de Sistemas da Etec Parque Belém.",
+  "info": [
+    "O website possui páginas como Home, Sobre Nós, Cadastro / Login, e, o mais importante, a página de noticias.",
+    "Os recursos mais interessantes incluem o Modo Dark, um sumário dos tópicos das notícias e algumas animações visuais.",
+    "Para desenvolver esse site foi utilizado HTML, CSS, PHP e SQL. Posteriormetne foi adicionado um arquivo Docker simples para testes locais usando o PHP."
+  ],
+  "funFact": "Este é tecnicamente o primeiro site \"sério\" que eu desenvolvi, sendo a terceira ideia para o TCC, após outras duas terem sido descartadas.",
+  "techStack": ["CSS", "HTML", "MySQL", "PHP", "Docker"],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/EarthWise-website",
+  "deploy": "https://lucasokokama.github.io/EarthWise-website-host/",
+  "startDate": "2022-03-05",
+  "finishDate": "2022-12-15"
+}

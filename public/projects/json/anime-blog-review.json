@@ -1,0 +1,29 @@
+{
+  "id": "anime-blog-review",
+  "name": "korosenku",
+  "type": "Projeto pessoal",
+  "intro": "Um blog de reviews criado para compartilhar minhas opiniões sobre os animes que assisto.",
+  "info": [
+    "No site você pode ver meus Animes, Personagens, Dubladores e Músicas favoritas de todos os tempos",
+    "Além disso há um sistema de pesquisa fuzzy que utiliza Fuse.js, modo dark, um componente customizado para Tooltip e animações legais!",
+    "O projeto foi feito com Angular, estilizado com Tailwind e publicado no Vercel. A coleta dos dados utilizou Pandas, enquanto o envio foi realizado via Flask."
+  ],
+  "funFact": "Esse foi o meu primeiro projeto usando TailwindCSS. Estilizar as páginas sem precisar ficar pensando em nomes de classes ajuda bastante!",
+  "techStack": [
+    "Angular",
+    "CSS",
+    "Figma",
+    "Flask",
+    "HTML",
+    "Pandas",
+    "Python",
+    "TailwindCSS",
+    "Typescript",
+    "Vercel"
+  ],
+  "design": "https://www.figma.com/proto/9xlVkFh4w7eP8Z3GWelY2q/Anime-Blog-Review?node-id=1-2&t=XBaEhW2ueDgbF9l7-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
+  "github": "https://github.com/LucasOkokama/anime-blog-review",
+  "deploy": "https://korosenku.vercel.app/",
+  "startDate": "2024-12-23",
+  "finishDate": null
+}

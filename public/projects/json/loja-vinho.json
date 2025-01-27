@@ -1,0 +1,26 @@
+{
+  "id": "loja-vinho",
+  "name": "Loja de Vinhos",
+  "type": "Tempo integral",
+  "intro": "Um site focado na venda de vinhos com um design elegante e luxuoso.",
+  "info": [
+    "Os usuários podem criar uma conta, fazer login, visualizar os detalhes dos vinhos e adicionar vinhos ao carrinho de compras.",
+    "O projeto foi desenvolvido com Angular e estilizado utilizando CSS. Os endpoints para as requisições foram implementados com Spring Boot, enquanto os dados dos vinhos foram armazenados e gerenciados em um banco de dados MySQL, com consultas feitas por meio de SQL."
+  ],
+  "funFact": "Esse foi o meu primeiro projeto usando Spring Boot e, como alguém que adora frontend, entender o que era e como funcionava uma API Rest foi difícil no começo.",
+  "techStack": [
+    "Angular",
+    "CSS",
+    "Figma",
+    "HTML",
+    "Java",
+    "MySQL",
+    "Spring Boot",
+    "TypeScript"
+  ],
+  "design": "https://www.figma.com/proto/JKhN9qtK5zfoH0lPQIZcJ6/VinhoEcommerce",
+  "github": "https://github.com/LucasOkokama/loja-vinho",
+  "deploy": null,
+  "startDate": "2024-09-26",
+  "finishDate": "2024-11-20"
+}

@@ -5,7 +5,9 @@ import Footer from "@/components/footer/footer";
 import Menu from "@/components/menu/menu";
 import Projects from "@/components/projects/projects";
 import Skills from "@/components/skills/skills";
+import { SearchContext } from "@/context/SearchContext";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -20,6 +22,8 @@ const menuFadeIn = {
 };
 
 export default function Home() {
+  const [searchValue, setSearchValue] = useState<string>("");
+
   return (
     <div className="flex h-full w-full justify-center px-5">
       <div className="h-full w-full max-w-5xl">
@@ -43,7 +47,9 @@ export default function Home() {
               </div>
 
               <div id="projects" className="w-full">
-                <Projects />
+                <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+                  <Projects />
+                </SearchContext.Provider>
               </div>
             </div>
           </div>

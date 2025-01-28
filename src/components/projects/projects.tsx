@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import GlitchText from "../ui/glitch-text/glitch-text";
-import ProjectsCards from "./projects-cards";
-import { SearchContext } from "@/context/SearchContext";
+import ProjectCard from "./project-card";
+import { useSearchContext } from "@/context/SearchContext";
 import SearchBox from "./search-box";
+import Fuse from "fuse.js";
 
 interface Project {
   id: string;
@@ -25,7 +26,44 @@ export default function Projects() {
   const [loading, setLoading] = useState(null);
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [searchValue, setSearchValue] = useState<string>("");
+  const { searchValue } = useSearchContext();
+
+  // Format the finishDate to make the search more accurate
+  const formatFinishDateForSearch = (project: Project) => {
+    if (project.finishDate === null) return "Ativo";
+    if (project.finishDate === "-") return "Pausado";
+    return "Finalizado";
+  };
+
+  // Fuse.js
+  const fuse = new Fuse<Project>(projectsData, {
+    keys: [
+      "name",
+      "type",
+      "techStack",
+      {
+        name: "finishDate",
+        getFn: formatFinishDateForSearch,
+      },
+    ],
+    threshold: 0.4,
+  });
+
+  // Perform the searches word by word
+  const searchProjects = () => {
+    if (searchValue) {
+      return searchValue.split(" ").reduce((filteredResults, word) => {
+        const searchResults = fuse.search(word).map((result) => result.item);
+        return filteredResults.filter((project) =>
+          searchResults.includes(project),
+        );
+      }, projectsData);
+    } else {
+      return projectsData;
+    }
+  };
+
+  const projectsSearched = searchProjects();
 
   useEffect(() => {
     // Fetch the Projects
@@ -65,10 +103,17 @@ export default function Projects() {
       </div>
 
       <div className="flex w-full max-w-xl flex-col items-center gap-14 lg:max-w-none">
-        <SearchContext.Provider value={{ searchValue, setSearchValue }}>
-          <SearchBox />
-          <ProjectsCards projectsData={projectsData} />
-        </SearchContext.Provider>
+        <SearchBox />
+
+        <div className="flex flex-col gap-36 lg:gap-24">
+          {projectsSearched && projectsSearched.length > 0 ? (
+            projectsSearched.map((project: Project) => (
+              <ProjectCard project={project} key={project.id} />
+            ))
+          ) : (
+            <div>Nenhum projeto encontrado...</div>
+          )}
+        </div>
       </div>
     </div>
   );

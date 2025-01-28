@@ -1,5 +1,6 @@
-import { Ubuntu_Sans_Mono } from "next/font/google";
 import { motion } from "motion/react";
+import { Ubuntu_Sans_Mono } from "next/font/google";
+import { useSearchContext } from "@/context/SearchContext";
 
 const ubuntoSansMono = Ubuntu_Sans_Mono({
   subsets: ["latin"],
@@ -23,6 +24,8 @@ const techStackFadeIn = {
 };
 
 export default function TechStack({ techStack }: { techStack: string[] }) {
+  const { setSearchValue } = useSearchContext();
+
   // Logos that need color inversion for dark mode
   const blackWhiteIcons = ["flask", "pandas", "vercel"];
 
@@ -51,7 +54,8 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
           animate="visible"
           custom={index}
           key={index}
-          className="flex items-center gap-2 rounded-[4px] border border-neutral-700/70 px-[7px] py-[5px]"
+          className="flex cursor-pointer select-none items-center gap-2 rounded-[4px] border border-neutral-400 px-[7px] py-[5px] duration-100 hover:bg-neutral-200 dark:border-neutral-700/70 dark:hover:bg-neutral-800/80"
+          onClick={() => setSearchValue((prev) => prev != "" ? prev + " " + item : item)} // Add tech stack tag to search
         >
           {/* Tech icon */}
           <img
@@ -61,7 +65,9 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
             style={getImageFilter(item)} // Style to change the color of black/white logos
           />
           {/* Tech name */}
-          <p className={`text-sm ${ubuntoSansMono.className} dark:text-neutral-400 text-neutral-700`}>
+          <p
+            className={`text-xs lg:text-sm ${ubuntoSansMono.className} text-neutral-700 dark:text-neutral-400`}
+          >
             {item}
           </p>
         </motion.div>

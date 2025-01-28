@@ -25,9 +25,15 @@ export default function Menu() {
 
     // Shortcut to change the section (Key "1" => Section 1, Key "2" => Section 2, etc...)
     const handleKeyDown = (event: KeyboardEvent) => {
-      const section = menuItems[Number(event.key) - 1];
-      if (section) {
-        scrollToHash(section.toLowerCase());
+      // Checks if there is an input focused (aka search box)
+      const isInputFocused = document.activeElement instanceof HTMLInputElement;
+
+      // If not, just scrolls to the selected section
+      if (!isInputFocused) {
+        const section = menuItems[Number(event.key) - 1];
+        if (section) {
+          scrollToHash(section.toLowerCase());
+        }
       }
     };
 

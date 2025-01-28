@@ -1,13 +1,13 @@
 "use client";
 
+import { motion } from "motion/react";
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
 import Menu from "@/components/menu/menu";
 import Projects from "@/components/projects/projects";
 import Skills from "@/components/skills/skills";
-import { SearchContext } from "@/context/SearchContext";
-import { motion } from "motion/react";
 import { useState } from "react";
+import { SearchContext } from "@/context/SearchContext";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -23,6 +23,7 @@ const menuFadeIn = {
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState<string>("");
+  const [showMoreCount, setShowMoreCount] = useState<number>(3);
 
   return (
     <div className="flex h-full w-full justify-center px-5">
@@ -38,7 +39,10 @@ export default function Home() {
           </motion.div>
           <div className="flex justify-center">
             <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[50vh] pt-24 md:pt-0">
-              <div id="about" className="flex min-h-screen w-full items-center scroll-mt-44">
+              <div
+                id="about"
+                className="flex min-h-screen w-full scroll-mt-44 items-center"
+              >
                 <About />
               </div>
 
@@ -47,7 +51,14 @@ export default function Home() {
               </div>
 
               <div id="projects" className="w-full scroll-mt-44">
-                <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+                <SearchContext.Provider
+                  value={{
+                    searchValue,
+                    setSearchValue,
+                    showMoreCount,
+                    setShowMoreCount,
+                  }}
+                >
                   <Projects />
                 </SearchContext.Provider>
               </div>

@@ -2,7 +2,9 @@ import { createContext, useContext } from "react";
 
 export interface SearchContextType {
   searchValue: string,
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>,
+  showMoreCount: number,
+  setShowMoreCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
 // Create the context

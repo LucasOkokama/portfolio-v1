@@ -64,7 +64,7 @@ export default function PersonalLinks() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className={`personalLinksContainer flex w-full flex-wrap justify-center md:justify-start gap-3 ${styles.personalLinksContainer}`}
+      className={`personalLinksContainer flex w-full flex-wrap justify-center gap-3 md:justify-start ${styles.personalLinksContainer}`}
     >
       {personalLinks.map((item, index) => (
         <motion.a
@@ -80,7 +80,8 @@ export default function PersonalLinks() {
           initial="hidden"
           animate="visible"
           custom={index}
-          className={`personalLinksItem ${styles.personalLinksItem} relative h-full w-fit rounded-md p-[1px]`}
+          className={`personalLinksItem ${styles.personalLinksItem} relative h-full w-fit rounded-md p-[1px] outline-none`}
+          tabIndex={-1}
         >
           <button className="relative z-[2] flex items-center gap-1 rounded-md border border-neutral-300 bg-neutral-200 px-5 py-2 text-sm dark:border-neutral-800 dark:bg-neutral-900">
             {index === 3 && (

@@ -61,7 +61,7 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
             style={getImageFilter(item)} // Style to change the color of black/white logos
           />
           {/* Tech name */}
-          <p className={`text-sm ${ubuntoSansMono.className} text-neutral-400`}>
+          <p className={`text-sm ${ubuntoSansMono.className} dark:text-neutral-400 text-neutral-700`}>
             {item}
           </p>
         </motion.div>

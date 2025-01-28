@@ -4,13 +4,13 @@ import { motion } from "motion/react";
 const inter = Inter({ subsets: ["latin"] });
 
 const infoFadeIn = {
-  hidden: { opacity: 0, y: 20, scale: 0.7 },
+  hidden: { opacity: 0, y: 20, scale: 0.8 },
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 0.7,
       delay: 0.2 * index,
     },
   }),
@@ -25,7 +25,7 @@ export default function Info({ info }: { info: string[] }) {
           initial="hidden"
           animate="visible"
           custom={index}
-          className="flex items-start gap-2 text-neutral-300"
+          className="flex items-start gap-2 text-neutral-800 dark:text-neutral-300"
           key={index}
         >
           {/* Spark icon */}

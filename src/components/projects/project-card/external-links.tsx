@@ -1,4 +1,4 @@
-import Tooltip from "../ui/tooltip";
+import Tooltip from "@/components/ui/tooltip";
 
 export default function ExternalLinks(props: {
   design: string | null;
@@ -66,7 +66,11 @@ export default function ExternalLinks(props: {
         if (value === null) return null;
         return (
           <Tooltip text={tooltipText[index]} y={14} position="center" key={key}>
-            <a href={value} target="_blank" className="capitalize">
+            <a
+              href={value}
+              target="_blank"
+              className="capitalize text-neutral-500"
+            >
               {getIcon(key)}
               <div className=""></div>
             </a>

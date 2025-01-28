@@ -8,7 +8,7 @@ export default function FunFact({ funFact }: { funFact: string | null }) {
 
   return (
     <div
-      className={`${lexend.className} flex max-w-[500px] gap-2 rounded-xl bg-neutral-900/80 px-5 py-3 text-xs leading-5 text-neutral-500`}
+      className={`${lexend.className} flex max-w-[500px] gap-2 rounded-xl bg-neutral-200/70 px-5 py-3 text-xs leading-5 text-neutral-500 dark:bg-neutral-900/80`}
     >
       <svg
         className="mt-[0.9px]"

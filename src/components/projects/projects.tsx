@@ -2,13 +2,9 @@
 
 import { useEffect, useState } from "react";
 import GlitchText from "../ui/glitch-text/glitch-text";
-import TechStack from "./tech-stack";
-import ProjectDate from "./project-date";
-import Info from "./info";
-import NameType from "./name-type";
-import ExternalLinks from "./external-links";
-import FunFact from "./fun-fact";
-import { motion } from "motion/react";
+import ProjectsCards from "./projects-cards";
+import { SearchContext } from "@/context/SearchContext";
+import SearchBox from "./search-box";
 
 interface Project {
   id: string;
@@ -25,25 +21,11 @@ interface Project {
   finishDate: string | null;
 }
 
-const bannerFadeIn = {
-  hidden: { opacity: 0, x: -60, y: 60, scale: 0.7 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.3,
-      duration: 1,
-    },
-  },
-};
-
 export default function Projects() {
-  const [loading, setLoading] = useState<Project[] | null>(null);
-  const [projectsData, setProjectsData] = useState([]);
+  const [loading, setLoading] = useState(null);
+  const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   useEffect(() => {
     // Fetch the Projects
@@ -82,73 +64,11 @@ export default function Projects() {
         <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
       </div>
 
-      <div className="max-w-xl lg:max-w-none">
-        <div></div>
-
-        <div className="flex flex-col gap-36 lg:gap-24">
-          {projectsData.map((project: Project) => (
-            <div key={project.id} className="grid gap-5">
-              <div className="flex flex-col gap-1">
-                {/* Date */}
-                <ProjectDate
-                  startDate={project.startDate}
-                  finishDate={project.finishDate}
-                />
-
-                {/* Project Name and Type */}
-                <NameType name={project.name} type={project.type} />
-              </div>
-              <div className="flex flex-col gap-8 lg:h-[500px] lg:flex-row">
-                {/* Project Banner */}
-                <motion.div
-                  variants={bannerFadeIn}
-                  initial="hidden"
-                  animate="visible"
-                  className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80"
-                >
-                  <img
-                    src={`/projects/preview/${project.id}/banner.png`}
-                    alt=""
-                    className="object-contain"
-                  />
-                </motion.div>
-
-                <div className="relative flex w-full flex-col items-center gap-8 pb-3 pt-1 lg:justify-between lg:gap-0">
-                  <div className="flex flex-col gap-5">
-                    {/* Introduction */}
-                    <div className="text-xl text-neutral-500">
-                      {project.intro}
-                    </div>
-
-                    {/* Some extra info */}
-                    <div className="flex flex-col gap-2">
-                      <Info info={project.info} />
-                    </div>
-                  </div>
-
-                  {/* Fun fact */}
-                  <div>
-                    <FunFact funFact={project.funFact} />
-                  </div>
-
-                  {/* Tech stack */}
-                  <div className="w-full">
-                    <TechStack techStack={project.techStack} />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                {/* External links */}
-                <ExternalLinks
-                  design={project.design}
-                  github={project.github}
-                  deploy={project.deploy}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="flex w-full max-w-xl flex-col items-center gap-14 lg:max-w-none">
+        <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+          <SearchBox />
+          <ProjectsCards projectsData={projectsData} />
+        </SearchContext.Provider>
       </div>
     </div>
   );

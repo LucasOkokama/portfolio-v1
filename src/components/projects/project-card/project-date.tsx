@@ -24,10 +24,12 @@ export default function ProjectDate({
         return (
           <div className="flex items-center gap-2 whitespace-nowrap">
             <div className="relative">
-              <span className="absolute size-[10] animate-ping rounded-full bg-green-700"></span>
-              <span className="block size-[10] rounded-full bg-green-800"></span>
+              <span className="absolute size-[10] animate-ping rounded-full bg-green-500 dark:bg-green-600"></span>
+              <span className="block size-[10] rounded-full bg-green-600 dark:bg-green-700"></span>
             </div>
-            <span className={`${lexend.className} text-sm text-neutral-400`}>
+            <span
+              className={`${lexend.className} text-sm text-neutral-600 dark:text-neutral-400`}
+            >
               Ativo
             </span>
           </div>
@@ -35,7 +37,7 @@ export default function ProjectDate({
 
       case "-":
         return (
-          <div className="flex items-center gap-[3px] whitespace-nowrap rounded-full bg-yellow-900/50 px-2 py-[3px] text-yellow-600/90">
+          <div className="flex items-center gap-[3px] whitespace-nowrap rounded-full bg-yellow-400/50 px-2 py-[3px] text-yellow-600 dark:bg-yellow-900/50 dark:text-yellow-600/90">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -53,7 +55,7 @@ export default function ProjectDate({
 
       default:
         return (
-          <div className="flex items-center gap-[3px] whitespace-nowrap rounded-full bg-neutral-700/70 px-2 py-[3px] text-neutral-400">
+          <div className="flex items-center gap-[3px] whitespace-nowrap rounded-full bg-neutral-300/70 px-2 py-[3px] text-neutral-500 dark:bg-neutral-700/50 dark:text-neutral-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13"

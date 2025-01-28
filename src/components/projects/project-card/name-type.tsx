@@ -14,7 +14,7 @@ export default function NameType({
       case "Projeto pessoal":
         return (
           <span
-            className={`${lexend.className} static bottom-2 w-fit whitespace-nowrap rounded-full bg-green-950/60 px-3 py-[6px] text-xs font-medium tracking-wide text-green-600 lg:absolute lg:ml-5`}
+            className={`${lexend.className} static bottom-2 w-fit whitespace-nowrap rounded-full bg-green-500/40 px-3 py-[6px] text-xs font-medium tracking-wide text-green-800 lg:absolute lg:ml-5 dark:bg-green-950/60 dark:text-green-600`}
           >
             {type}
           </span>
@@ -23,7 +23,7 @@ export default function NameType({
       case "Tempo integral":
         return (
           <span
-            className={`${lexend.className} static bottom-2 w-fit whitespace-nowrap rounded-full bg-sky-950/60 px-3 py-[6px] text-xs font-medium tracking-wide text-sky-500/90 lg:absolute lg:ml-5`}
+            className={`${lexend.className} static bottom-2 w-fit whitespace-nowrap rounded-full bg-sky-200/80 text-sky-600 px-3 py-[6px] text-xs font-medium tracking-wide lg:absolute lg:ml-5 dark:bg-sky-950/60 dark:text-sky-500/90`}
           >
             {type}
           </span>

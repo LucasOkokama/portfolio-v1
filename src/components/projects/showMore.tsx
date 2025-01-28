@@ -1,4 +1,4 @@
-import styles from "../css/projects.module.css";
+import styles from "./css/projects.module.css";
 import { Geist } from "next/font/google";
 import { useSearchContext } from "@/context/SearchContext";
 import { useRef } from "react";

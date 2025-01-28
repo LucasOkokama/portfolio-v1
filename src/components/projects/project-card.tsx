@@ -1,10 +1,10 @@
-import ExternalLinks from "./project-card/external-links";
-import FunFact from "./project-card/fun-fact";
-import Info from "./project-card/info";
-import NameType from "./project-card/name-type";
-import ProjectDate from "./project-card/project-date";
-import TechStack from "./project-card/tech-stack";
 import { motion } from "motion/react";
+import ProjectDate from "./project-card/project-date";
+import NameType from "./project-card/name-type";
+import Info from "./project-card/info";
+import FunFact from "./project-card/fun-fact";
+import TechStack from "./project-card/tech-stack";
+import ExternalLinks from "./project-card/external-links";
 
 interface Project {
   id: string;
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       initial="hidden"
       animate="visible"
       key={project.id}
-      className="grid gap-5"
+      className="grid gap-6"
     >
       <div className="flex flex-col gap-1">
         {/* Date */}
@@ -71,7 +71,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         {/* Project Name and Type */}
         <NameType name={project.name} type={project.type} />
       </div>
-      <div className="flex flex-col gap-8 lg:h-[500px] lg:flex-row">
+
+      <div className="flex flex-col gap-3 lg:gap-8 lg:h-[500px] lg:flex-row">
         {/* Project Banner */}
         <motion.div
           variants={cardProjectFadeIn}
@@ -84,19 +85,21 @@ export default function ProjectCard({ project }: { project: Project }) {
           />
         </motion.div>
 
-        <div className="relative flex w-full flex-col items-center gap-8 pb-3 pt-1 lg:justify-between lg:gap-0">
+        <div className="relative flex w-full flex-col items-center gap-5 lg:pb-3 lg:pt-2 lg:justify-between lg:gap-0">
           <div className="flex flex-col gap-5">
             {/* Introduction */}
-            <div className="text-xl text-neutral-500">{project.intro}</div>
+            <div className="text-neutral-500 lg:text-xl">
+              {project.intro}
+            </div>
 
             {/* Some extra info */}
-            <div className="flex flex-col gap-2">
+            <div className="hidden flex-col gap-2 lg:flex">
               <Info info={project.info} />
             </div>
           </div>
 
           {/* Fun fact */}
-          <div>
+          <div className="hidden lg:block">
             <FunFact funFact={project.funFact} />
           </div>
 

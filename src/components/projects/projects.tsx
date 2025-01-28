@@ -102,8 +102,10 @@ export default function Projects() {
         <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
       </div>
 
-      <div className="flex w-full max-w-xl flex-col items-center gap-14 lg:max-w-none">
-        <SearchBox />
+      <div className="flex w-full max-w-xl relative flex-col items-center gap-14 lg:max-w-none">
+        <div className="w-full sticky top-[90px] md:top-32 z-[2] flex justify-center">
+          <SearchBox />
+        </div>
 
         <div className="flex flex-col gap-36 lg:gap-24">
           {projectsSearched && projectsSearched.length > 0 ? (

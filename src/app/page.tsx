@@ -38,15 +38,15 @@ export default function Home() {
           </motion.div>
           <div className="flex justify-center">
             <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[50vh] pt-24 md:pt-0">
-              <div id="about" className="flex min-h-screen w-full items-center">
+              <div id="about" className="flex min-h-screen w-full items-center scroll-mt-44">
                 <About />
               </div>
 
-              <div id="skills" className="w-full">
+              <div id="skills" className="w-full scroll-mt-44">
                 <Skills />
               </div>
 
-              <div id="projects" className="w-full">
+              <div id="projects" className="w-full scroll-mt-44">
                 <SearchContext.Provider value={{ searchValue, setSearchValue }}>
                   <Projects />
                 </SearchContext.Provider>

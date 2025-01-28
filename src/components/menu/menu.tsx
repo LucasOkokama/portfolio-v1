@@ -17,7 +17,7 @@ export default function Menu() {
       const element = document.getElementById(section);
       element?.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
         inline: "center",
       });
       window.history.pushState(null, "", `#${section}`);

@@ -1,9 +1,9 @@
 "use client";
 
-import { Lexend } from "next/font/google";
-import { useEffect, useRef, useState } from "react";
-import Tooltip from "../ui/tooltip";
 import { motion, useInView } from "motion/react";
+import { Lexend } from "next/font/google";
+import Tooltip from "../ui/tooltip";
+import { useEffect, useRef, useState } from "react";
 
 const lexend = Lexend({ subsets: ["latin"] });
 

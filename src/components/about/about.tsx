@@ -1,11 +1,11 @@
 "use client";
 
 import { Geist, IBM_Plex_Mono } from "next/font/google";
-import DownloadResume from "./download-resume";
+import { motion } from "motion/react";
 import Name from "./name";
 import Role from "./role";
+import DownloadResume from "./download-resume";
 import PersonalLinks from "./personal-links";
-import { motion } from "motion/react";
 
 const geistSans = Geist({ subsets: ["latin"] });
 const ibmPlexMono = IBM_Plex_Mono({

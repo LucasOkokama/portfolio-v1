@@ -1,10 +1,10 @@
 "use client";
 
-import DarkModeToggle from "../ui/dark-mode-toggle";
+import styles from "./css/menu.module.css";
 import MyLogo from "../ui/my-logo";
+import DarkModeToggle from "../ui/dark-mode-toggle";
 import MenuMobile from "./menu-mobile";
 import Tooltip from "../ui/tooltip";
-import styles from "./css/menu.module.css";
 import { useEffect } from "react";
 import Link from "next/link";
 

@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "motion/react";
 import styles from "./css/about.module.css";
+import { motion } from "motion/react";
+import { useRef } from "react";
 
 // Animation
 const personalLinksFadeIn = {

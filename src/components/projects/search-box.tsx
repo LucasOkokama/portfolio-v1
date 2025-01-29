@@ -1,4 +1,5 @@
 import { useSearchContext } from "@/context/SearchContext";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 
 export default function SearchBox() {
@@ -30,6 +31,20 @@ export default function SearchBox() {
     }
   }, [searchValue]);
 
+  useEffect(() => {
+    // Shortcut to focus the search box
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === "k") {
+        event.preventDefault();
+        if (inputRef.current) inputRef.current.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <div className="relative w-full max-w-xl rounded-lg text-neutral-400 focus-within:text-neutral-700 dark:text-neutral-600 dark:focus-within:text-neutral-400">
       <svg
@@ -55,6 +70,25 @@ export default function SearchBox() {
         placeholder="Pesquise por um projeto ou tecnologia"
         onChange={handleInputChange}
       />
+      <AnimatePresence>
+        {searchValue === "" && (
+          <motion.span
+            className="absolute right-2 top-[7px] hidden rounded-lg bg-neutral-300/70 dark:bg-neutral-800/80 px-2 py-[2px] text-neutral-600 dark:text-neutral-400 md:block"
+            initial={{ opacity: 0, translateX: 20 }}
+            animate={{
+              opacity: 1,
+              translateX: 0,
+              transition: {
+                type: "spring",
+                bounce: 0.5,
+              },
+            }}
+            exit={{ opacity: 0, translateX: 10 }}
+          >
+            <kbd>Ctrl K</kbd>
+          </motion.span>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

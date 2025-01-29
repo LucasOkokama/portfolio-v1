@@ -1,11 +1,13 @@
 "use client";
 
+import { useDarkModeContext } from "@/context/DarkModeContext";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const themes = ["dark", "light", "system"];
   const [themeSelected, setThemeSelected] = useState(0);
+  const { setDarkModeEnabled } = useDarkModeContext();
 
   const icons: { [theme: string]: string } = {
     dark: "M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z",
@@ -15,6 +17,19 @@ export default function DarkModeToggle() {
       "M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z",
   };
   let [themePath, setThemePath] = useState("");
+
+  // Create debounce model
+  const debounce = (delay: number) => {
+    let timeoutId: NodeJS.Timeout;
+    return () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setThemeSelected((prev) => (prev + 1) % themes.length);
+      }, delay);
+    };
+  };
+
+  const debouncedDarkMode = debounce(600);
 
   // Initial theme check
   useEffect(() => {
@@ -30,13 +45,17 @@ export default function DarkModeToggle() {
 
     function handleThemeChange() {
       const theme = themes[themeSelected];
+      const isDarkMode =
+        theme === "dark" || (theme === "system" && systemPrefersDark);
 
-      document.documentElement.classList.toggle(
-        "dark",
-        theme === "dark" || (theme === "system" && systemPrefersDark),
-      );
+      // Add  or remove "dark" class to the html tag
+      document.documentElement.classList.toggle("dark", isDarkMode);
+      // Save if the dark mode is enabled
+      setDarkModeEnabled(isDarkMode);
 
       localStorage.setItem("theme", theme);
+
+      // Change the theme icon
       setThemePath(icons[theme]);
     }
 
@@ -57,7 +76,7 @@ export default function DarkModeToggle() {
 
   // Change the theme selected
   function changeTheme() {
-    setThemeSelected((prev) => (prev + 1) % themes.length);
+    debouncedDarkMode();
   }
 
   return (

@@ -92,7 +92,7 @@ export default function Statistics() {
         <div className="flex w-full flex-wrap gap-4 md:flex-nowrap">
           {statsInfo.map((stat, index) => (
             <div
-              className="flex w-full flex-col gap-3 rounded-xl border border-neutral-600 px-6 py-4"
+              className="flex w-full flex-col gap-3 rounded-xl border border-neutral-400 px-6 py-4 dark:border-neutral-700/60"
               key={index}
             >
               {/* Svgs + Titles */}
@@ -111,7 +111,7 @@ export default function Statistics() {
 
         {/* Second Stats Line */}
         <div className="w-full">
-          <div className="flex w-full flex-col gap-6 rounded-xl border border-neutral-600 px-6 pb-6 pt-4">
+          <div className="flex w-full flex-col gap-6 rounded-xl border border-neutral-400 px-6 pb-6 pt-4 dark:border-neutral-700/60">
             {/* Svg + Title */}
             <div className="flex gap-2 text-neutral-400">
               <svg

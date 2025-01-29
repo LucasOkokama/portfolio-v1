@@ -44,7 +44,7 @@ export default function Menu() {
 
   return (
     <nav
-      className={`duration-800 ${styles.transparentBackground} flex w-full items-stretch justify-between rounded-xl bg-neutral-100/60 px-5 py-2 shadow-md shadow-neutral-900/[0.1] sm:px-8 dark:bg-neutral-950/70 dark:shadow-neutral-100/[0.02]`}
+      className={`duration-800 ${styles.transparentBackground} flex w-full items-stretch justify-between rounded-xl bg-neutral-100/60 px-5 py-2 shadow-md shadow-neutral-900/[0.1] sm:px-8 dark:bg-neutral-950/80 dark:shadow-neutral-100/[0.02]`}
     >
       <MyLogo />
       <div className="flex items-center gap-4">

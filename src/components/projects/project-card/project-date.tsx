@@ -73,7 +73,7 @@ export default function ProjectDate({
   }
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-5 lg:gap-6">
       <div className="flex gap-2 text-neutral-500">
         <span className="capitalize">{formatDate(startDate)}</span>-
         <span className="capitalize">{formatDate(finishDate)}</span>

@@ -110,7 +110,7 @@ export default function Projects() {
       </div>
 
       <div className="relative flex w-full max-w-xl flex-col items-center gap-14 lg:max-w-none">
-        <div className="sticky top-[90px] z-[2] flex w-full justify-center lg:top-[110px]">
+        <div className="z-[2] flex w-full justify-center lg:top-[110px]">
           <SearchBox />
         </div>
 

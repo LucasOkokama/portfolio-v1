@@ -8,6 +8,7 @@ import Projects from "@/components/projects/projects";
 import Skills from "@/components/skills/skills";
 import { useState } from "react";
 import { SearchContext } from "@/context/SearchContext";
+import Statistics from "@/components/statistics/statistics";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -61,6 +62,10 @@ export default function Home() {
                 >
                   <Projects />
                 </SearchContext.Provider>
+              </div>
+
+              <div id="statistics" className="w-full">
+                <Statistics />
               </div>
             </div>
           </div>

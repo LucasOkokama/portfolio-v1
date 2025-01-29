@@ -1,0 +1,7 @@
+.cornersTechCarousel {
+  mask-image: linear-gradient(to right,
+      transparent,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 1) 70%,
+      transparent)
+}

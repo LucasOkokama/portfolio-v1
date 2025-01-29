@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function BlackHole() {
   const [blackHoleHover, setBlackHoleHover] = useState(false);
-
-
-  useEffect(() => {
-    console.log("a")
-  }, [])
 
   return (
     <div className="relative h-full w-full">

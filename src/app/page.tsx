@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <div className="relative flex h-full w-full flex-col">
-      { darkModeEnabled && <BlackHole />}
+      {darkModeEnabled && <BlackHole />}
       <div className="flex h-full w-full justify-center px-5">
         <div className="h-full w-full max-w-5xl">
           <div className="flex w-full flex-col">
@@ -75,7 +75,7 @@ export default function Home() {
                   </SearchContext.Provider>
                 </div>
 
-                <div id="statistics" className="w-full">
+                <div id="statistics" className="w-full scroll-mt-44">
                   <Statistics />
                 </div>
               </div>

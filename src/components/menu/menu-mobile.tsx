@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import { useState } from "react";
 
 // Animation
@@ -108,28 +109,29 @@ export default function MenuMobile() {
               initial="hidden"
               animate="visible"
               exit="leave"
-              className="absolute right-0 top-14 overflow-hidden rounded-lg border border-neutral-400/50 bg-neutral-100/70 p-1 font-semibold text-neutral-500 backdrop-blur-lg dark:border-neutral-700/50 dark:bg-neutral-950/70"
+              className="absolute right-0 top-14 overflow-hidden rounded-lg border border-neutral-400/50 bg-neutral-100/70 p-1 font-semibold text-neutral-500 backdrop-blur-lg dark:border-neutral-700/50 dark:bg-neutral-950/80"
             >
               {menuItems.map((item, index) => (
-                // Menu mobile items
-                <motion.li
-                  variants={menuItemsFadeIn}
-                  custom={index}
-                  key={index}
-                  className="flex cursor-pointer items-center gap-3 rounded-lg p-2 text-sm transition-colors duration-200 hover:bg-neutral-300/70 hover:text-neutral-900 dark:hover:bg-neutral-800/70 dark:hover:text-neutral-200"
-                >
-                  {/* Items icons */}
-                  <svg
-                    className="w-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 -960 960 960"
-                    fill="currentColor"
+                <Link href={`#${item.name.toLowerCase()}`} key={index}>
+                  {/* // Menu mobile items */}
+                  <motion.li
+                    variants={menuItemsFadeIn}
+                    custom={index}
+                    className="flex cursor-pointer items-center gap-3 rounded-lg p-2 text-sm transition-colors duration-200 hover:bg-neutral-300/70 hover:text-neutral-900 dark:hover:bg-neutral-800/70 dark:hover:text-neutral-200"
                   >
-                    <path d={item.icon} />
-                  </svg>
-                  {/* Items text */}
-                  {item.name}
-                </motion.li>
+                    {/* Items icons */}
+                    <svg
+                      className="w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      fill="currentColor"
+                    >
+                      <path d={item.icon} />
+                    </svg>
+                    {/* Items text */}
+                    {item.name}
+                  </motion.li>
+                </Link>
               ))}
             </motion.ul>
           )}

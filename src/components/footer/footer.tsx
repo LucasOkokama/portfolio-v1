@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 import { Rethink_Sans, Geist, Inter, Lexend } from "next/font/google";
-import { useEffect, useState } from "react";
 
 const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
 const geistSans = Geist({ subsets: ["latin"] });
@@ -8,6 +9,7 @@ const lexend = Lexend({ subsets: ["latin"] });
 
 export default function Footer() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const constraintsRef = useRef(null);
   const madeWith = ["nextjs.svg", "tailwindcss.svg", "motion.svg", "figma.svg"];
 
   useEffect(() => {
@@ -15,17 +17,20 @@ export default function Footer() {
   });
 
   return (
-    <div className="flex w-full max-w-md flex-col items-center justify-center pb-8">
+    <div className="relative flex w-full max-w-md flex-col items-center justify-center pb-8">
       {/* Divider 1 */}
       <div className="mb-7 h-[1px] w-full rounded-full bg-gradient-to-r from-transparent via-neutral-600 to-transparent"></div>
-      <div className="mb-2 flex select-none items-center gap-4 text-xs">
-        MADE WITH
+      <div className="mb-2 flex select-none items-center gap-2 text-xs">
+        <span className="p-1">MADE WITH</span>
         {madeWith.map((item, index) => (
-          <img
+          <motion.img
+            drag
+            dragConstraints={constraintsRef}
+            whileTap={{ scale: 1.3 }}
             src={`/skills/icons/solid/${item}`}
             alt={item}
             key={index}
-            className="w-5"
+            className="w-7 cursor-pointer p-1"
             // Change SVG color using filter
             style={{
               filter: isDarkMode
@@ -46,6 +51,11 @@ export default function Footer() {
         </a>
         . All rights reserved.
       </div>
+
+      <span
+        ref={constraintsRef}
+        className="absolute inset-0 bottom-14 top-[-32] z-[-10]"
+      ></span>
     </div>
   );
 }

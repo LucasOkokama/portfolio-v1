@@ -5,6 +5,8 @@ import Info from "./project-card/info";
 import FunFact from "./project-card/fun-fact";
 import TechStack from "./project-card/tech-stack";
 import ExternalLinks from "./project-card/external-links";
+import { useEffect } from "react";
+import { useThemeContext } from "@/context/ThemeContext";
 
 interface Project {
   id: string;
@@ -53,6 +55,13 @@ const cardProjectFadeIn = {
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { theme } = useThemeContext();
+
+  const imgPath =
+    theme === "dark"
+      ? `/projects/preview/${project.id}/banner-dark.png`
+      : `/projects/preview/${project.id}/banner.png`;
+
   return (
     <motion.div
       variants={bannerFadeIn}
@@ -72,25 +81,26 @@ export default function ProjectCard({ project }: { project: Project }) {
         <NameType name={project.name} type={project.type} />
       </div>
 
-      <div className="flex flex-col gap-3 lg:gap-8 lg:h-[500px] lg:flex-row">
+      <div className="flex flex-col gap-3 lg:h-[500px] lg:flex-row lg:gap-8">
         {/* Project Banner */}
         <motion.div
           variants={cardProjectFadeIn}
           className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80"
         >
           <img
-            src={`/projects/preview/${project.id}/banner.png`}
-            alt=""
+            src={imgPath}
+            alt={project.name}
             className="object-contain"
+            onError={(e) =>
+              (e.currentTarget.src = `/projects/preview/${project.id}/banner.png`)
+            }
           />
         </motion.div>
 
-        <div className="relative flex w-full flex-col items-center gap-5 lg:pb-3 lg:pt-2 lg:justify-between lg:gap-0">
+        <div className="relative flex w-full flex-col items-center gap-5 lg:justify-between lg:gap-0 lg:pb-3 lg:pt-2">
           <div className="flex flex-col gap-5">
             {/* Introduction */}
-            <div className="text-neutral-500 lg:text-xl">
-              {project.intro}
-            </div>
+            <div className="text-neutral-500 lg:text-xl">{project.intro}</div>
 
             {/* Some extra info */}
             <div className="hidden flex-col gap-2 lg:flex">

@@ -9,7 +9,7 @@ export default function BlackHole() {
       <div
         onMouseEnter={() => setBlackHoleHover(true)}
         onMouseLeave={() => setBlackHoleHover(false)}
-        className="absolute left-[50%] z-[2] h-[34vh] w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-[120px] lg:h-[52vh] lg:rounded-full"
+        className="absolute left-[50%] z-[2] h-[31vh] w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-[120px] lg:h-[46vh] lg:rounded-full"
       ></div>
 
       {/* Black hole */}

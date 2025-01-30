@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.6;
   background: radial-gradient(160px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
       var(--border-color, rgb(177, 177, 177)),
       transparent 40%);

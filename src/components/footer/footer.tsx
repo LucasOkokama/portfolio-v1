@@ -41,21 +41,25 @@ export default function Footer() {
           />
         ))}
       </div>
-      <div className="font-ultralight w-fit text-sm text-neutral-400 dark:text-neutral-500">
-        © {currentYear}{" "}
-        <a
-          href="https://github.com/LucasOkokama"
-          target="_blank"
-          className="font-semibold text-neutral-500 dark:text-neutral-400"
-        >
-          Lucas Okokama
-        </a>
-        . All rights reserved.
+      <div className="font-ultralight flex w-fit flex-col items-center gap-1 text-sm text-neutral-400 md:flex-row dark:text-neutral-500">
+        <span className="w-fit">
+          © {currentYear}{" "}
+          <a
+            href="https://github.com/LucasOkokama"
+            target="_blank"
+            className="font-semibold text-neutral-500 dark:text-neutral-400"
+          >
+            Lucas Okokama
+          </a>
+          .
+        </span>
+        <span className="w-fit">All rights reserved.</span>
       </div>
 
+      {/* Drag techs box */}
       <span
         ref={constraintsRef}
-        className="absolute inset-0 bottom-14 top-[-32] z-[-10]"
+        className="absolute inset-0 bottom-[14px] top-[-32] z-[-10]"
       ></span>
     </div>
   );

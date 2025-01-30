@@ -64,7 +64,7 @@ export default function PersonalLinks() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className={`personalLinksContainer flex w-full flex-wrap justify-center gap-3 md:justify-start ${styles.personalLinksContainer}`}
+      className={`personalLinksContainer flex w-fit flex-wrap justify-center gap-3 md:justify-start ${styles.personalLinksContainer}`}
     >
       {personalLinks.map((item, index) => (
         <motion.a

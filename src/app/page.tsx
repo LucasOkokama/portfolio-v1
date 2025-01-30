@@ -27,14 +27,14 @@ const menuFadeIn = {
 export default function Home() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [showMoreCount, setShowMoreCount] = useState<number>(3);
-
   const [darkModeEnabled, setDarkModeEnabled] = useState(false);
 
   return (
     <div className="relative flex h-full w-full flex-col items-center">
       {darkModeEnabled && <BlackHole />}
       {!darkModeEnabled && (
-        <div className="absolute bottom-0 top-0 z-[-3] h-[16%] w-[100%] select-none bg-[linear-gradient(to_right,_grey_1px,_transparent_1px),_linear-gradient(to_bottom,_grey_1px,_transparent_1px)] bg-[size:75px_40px] text-transparent opacity-[0.1]">
+        // Grid top page
+        <div className="absolute bottom-0 top-0 z-[-3] h-[16%] w-[100%] select-none bg-[linear-gradient(to_right,_grey_1px,_transparent_1px),_linear-gradient(to_bottom,_grey_1px,_transparent_1px)] bg-[size:75px_40px] text-transparent opacity-[0.08]">
           <div className="absolute inset-0 top-[50%] bg-gradient-to-b from-transparent to-white to-50%"></div>
         </div>
       )}
@@ -55,19 +55,19 @@ export default function Home() {
             </DarkModeContext.Provider>
 
             <div className="flex justify-center">
-              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[35vh] pt-[12vh] md:pt-0">
+              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh] pt-[12vh] md:pt-0">
                 <div
                   id="about"
-                  className="flex min-h-screen w-full scroll-mt-44 items-center"
+                  className="flex min-h-screen w-full scroll-mt-60 items-center"
                 >
                   <About />
                 </div>
 
-                <div id="skills" className="w-full scroll-mt-44">
+                <div id="skills" className="w-full scroll-mt-60">
                   <Skills />
                 </div>
 
-                <div id="projects" className="w-full scroll-mt-44">
+                <div id="projects" className="w-full scroll-mt-60">
                   <SearchContext.Provider
                     value={{
                       searchValue,
@@ -80,18 +80,19 @@ export default function Home() {
                   </SearchContext.Provider>
                 </div>
 
-                <div id="statistics" className="w-full scroll-mt-44">
+                <div id="statistics" className="w-full scroll-mt-60">
                   <Statistics />
                 </div>
               </div>
             </div>
             <div className="relative mt-80 flex justify-center">
-              <div className="absolute bottom-0 flex h-[210%] w-full select-none justify-center overflow-hidden">
+              {/* Grid background */}
+              <div className="absolute bottom-0 flex h-[184%] w-full select-none justify-center overflow-hidden">
                 <div className="absolute z-[-1] h-full w-[750px]">
                   <img
                     src="/grid-footer.png"
                     alt=""
-                    className="opacity-[0.15] invert dark:opacity-[0.1] dark:invert-0"
+                    className="opacity-[0.1] invert dark:invert-0"
                   />
                 </div>
               </div>

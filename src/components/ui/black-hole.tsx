@@ -5,11 +5,14 @@ export default function BlackHole() {
 
   return (
     <div className="relative h-full w-full">
+      {/* Hover area */}
       <div
         onMouseEnter={() => setBlackHoleHover(true)}
         onMouseLeave={() => setBlackHoleHover(false)}
         className="absolute left-[50%] z-[2] h-[34vh] w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-[120px] lg:h-[52vh] lg:rounded-full"
       ></div>
+
+      {/* Black hole */}
       <div
         className={`${blackHoleHover ? "opacity-100" : "opacity-40"} absolute top-[-56vh] z-[-2] flex h-screen w-full flex-col bg-blend-darken duration-300 lg:top-[-50vh]`}
       >
@@ -21,6 +24,8 @@ export default function BlackHole() {
         >
           <source src="/blackhole.webm" type="video/webm" />
         </video>
+
+        {/* Transition layer */}
         <div className="z-[-2] min-h-screen bg-gradient-to-b from-[#030014] via-[#060018] via-30% to-[#0A0A0A]" />
       </div>
     </div>

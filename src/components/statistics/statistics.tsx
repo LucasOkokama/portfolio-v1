@@ -110,13 +110,13 @@ export default function Statistics() {
               key={index}
             >
               {/* Svgs + Titles */}
-              <div className="flex gap-2 text-neutral-400">
+              <div className="flex gap-2 text-neutral-400 items-center">
                 <div dangerouslySetInnerHTML={{ __html: stat.icon }}></div>
                 <span className={`${lexend.className}`}>{stat.name}</span>
               </div>
               {/* Stats values */}
               <div
-                className={`${lexend.className} whitespace-nowrap text-[18px] font-semibold md:text-[26px]`}
+                className={`${lexend.className} whitespace-nowrap text-[18px] font-semibold text-neutral-700 md:text-[26px] dark:text-neutral-200`}
                 dangerouslySetInnerHTML={{ __html: stat.value }}
               ></div>
             </div>

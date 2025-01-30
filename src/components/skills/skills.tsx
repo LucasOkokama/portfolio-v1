@@ -15,7 +15,7 @@ export default function Skills() {
         <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
       </div>
       {/* Stack icons */}
-      <div className="flex w-full flex-wrap gap-20 sm:gap-8 lg:justify-between lg:gap-0">
+      <div className="flex w-full flex-wrap gap-20 sm:gap-x-10 sm:justify-center lg:justify-between lg:gap-0">
         <SkillsCard type="frontend" />
         <SkillsCard type="backend" />
         <SkillsCard type="tools" />

@@ -70,10 +70,11 @@ export default function SearchBox() {
         placeholder="Pesquise por um projeto ou tecnologia"
         onChange={handleInputChange}
       />
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {searchValue === "" && (
           <motion.span
-            className="absolute right-2 top-[7px] hidden rounded-lg bg-neutral-300/70 dark:bg-neutral-800/80 px-2 py-[2px] text-neutral-600 dark:text-neutral-400 md:block"
+            key="shortcut"
+            className="absolute right-2 top-[7px] hidden rounded-lg bg-neutral-300/70 px-2 py-[2px] text-neutral-600 md:block dark:bg-neutral-800/80 dark:text-neutral-400"
             initial={{ opacity: 0, translateX: 20 }}
             animate={{
               opacity: 1,
@@ -86,6 +87,42 @@ export default function SearchBox() {
             exit={{ opacity: 0, translateX: 10 }}
           >
             <kbd>Ctrl K</kbd>
+          </motion.span>
+        )}
+
+        {searchValue != "" && (
+          <motion.span
+            key="deleteX"
+            onClick={() => setSearchValue("")}
+            className="absolute right-3 top-[9px] cursor-pointer"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              transition: {
+                type: "spring",
+                bounce: 0.5,
+                duration: 1,
+              },
+            }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            whileHover={{ color: "#ef4444" }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
           </motion.span>
         )}
       </AnimatePresence>

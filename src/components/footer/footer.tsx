@@ -11,6 +11,7 @@ export default function Footer() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const constraintsRef = useRef(null);
   const madeWith = ["nextjs.svg", "tailwindcss.svg", "motion.svg", "figma.svg"];
+  const currentYear: number = new Date().getFullYear();
 
   useEffect(() => {
     setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -19,7 +20,7 @@ export default function Footer() {
   return (
     <div className="relative flex w-full max-w-md flex-col items-center justify-center pb-8">
       {/* Divider 1 */}
-      <div className="mb-7 h-[1px] w-full rounded-full bg-gradient-to-r from-transparent via-neutral-600 to-transparent"></div>
+      <div className="mb-7 h-[1px] w-full rounded-full bg-gradient-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-600"></div>
       <div className="mb-2 flex select-none items-center gap-2 text-xs">
         <span className="p-1">MADE WITH</span>
         {madeWith.map((item, index) => (
@@ -40,12 +41,12 @@ export default function Footer() {
           />
         ))}
       </div>
-      <div className="font-ultralight w-fit text-sm text-neutral-500">
-        © 2025{" "}
+      <div className="font-ultralight w-fit text-sm text-neutral-400 dark:text-neutral-500">
+        © {currentYear}{" "}
         <a
           href="https://github.com/LucasOkokama"
           target="_blank"
-          className="font-semibold text-neutral-400"
+          className="font-semibold text-neutral-500 dark:text-neutral-400"
         >
           Lucas Okokama
         </a>

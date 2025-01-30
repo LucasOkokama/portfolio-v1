@@ -6,11 +6,10 @@ import Footer from "@/components/footer/footer";
 import Menu from "@/components/menu/menu";
 import Projects from "@/components/projects/projects";
 import Skills from "@/components/skills/skills";
-import { useState } from "react";
-import { SearchContext } from "@/context/SearchContext";
 import Statistics from "@/components/statistics/statistics";
 import BlackHole from "@/components/ui/black-hole";
-import { DarkModeContext } from "@/context/DarkModeContext";
+import { useThemeContext } from "@/context/ThemeContext";
+import SearchContextProvider from "@/context/SearchContext";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -25,14 +24,12 @@ const menuFadeIn = {
 };
 
 export default function Home() {
-  const [searchValue, setSearchValue] = useState<string>("");
-  const [showMoreCount, setShowMoreCount] = useState<number>(3);
-  const [darkModeEnabled, setDarkModeEnabled] = useState(false);
+  const { theme } = useThemeContext();
 
   return (
     <div className="relative flex h-full w-full flex-col items-center">
-      {darkModeEnabled && <BlackHole />}
-      {!darkModeEnabled && (
+      {theme === "dark" && <BlackHole />}
+      {theme === "light" && (
         // Grid top page
         <div className="absolute bottom-0 top-0 z-[-3] h-[16%] w-[100%] select-none bg-[linear-gradient(to_right,_grey_1px,_transparent_1px),_linear-gradient(to_bottom,_grey_1px,_transparent_1px)] bg-[size:75px_40px] text-transparent opacity-[0.08]">
           <div className="absolute inset-0 top-[50%] bg-gradient-to-b from-transparent to-white to-50%"></div>
@@ -41,19 +38,14 @@ export default function Home() {
       <div className="flex h-full w-full justify-center px-5">
         <div className="h-full w-full max-w-5xl">
           <div className="flex w-full flex-col">
-            <DarkModeContext.Provider
-              value={{ darkModeEnabled, setDarkModeEnabled }}
+            <motion.div
+              variants={menuFadeIn}
+              initial="hidden"
+              animate="visible"
+              className="sticky top-5 z-[5]"
             >
-              <motion.div
-                variants={menuFadeIn}
-                initial="hidden"
-                animate="visible"
-                className="sticky top-5 z-[5]"
-              >
-                <Menu />
-              </motion.div>
-            </DarkModeContext.Provider>
-
+              <Menu />
+            </motion.div>
             <div className="flex justify-center">
               <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh] pt-[12vh] md:pt-0">
                 <div
@@ -68,16 +60,9 @@ export default function Home() {
                 </div>
 
                 <div id="projects" className="w-full scroll-mt-60">
-                  <SearchContext.Provider
-                    value={{
-                      searchValue,
-                      setSearchValue,
-                      showMoreCount,
-                      setShowMoreCount,
-                    }}
-                  >
+                  <SearchContextProvider>
                     <Projects />
-                  </SearchContext.Provider>
+                  </SearchContextProvider>
                 </div>
 
                 <div id="statistics" className="w-full scroll-mt-60">

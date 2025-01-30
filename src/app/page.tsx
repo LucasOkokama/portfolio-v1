@@ -31,8 +31,13 @@ export default function Home() {
   const [darkModeEnabled, setDarkModeEnabled] = useState(false);
 
   return (
-    <div className="relative flex h-full w-full flex-col">
+    <div className="relative flex h-full w-full flex-col items-center">
       {darkModeEnabled && <BlackHole />}
+      {!darkModeEnabled && (
+        <div className="absolute bottom-0 top-0 z-[-3] h-[16%] w-[100%] select-none bg-[linear-gradient(to_right,_grey_1px,_transparent_1px),_linear-gradient(to_bottom,_grey_1px,_transparent_1px)] bg-[size:75px_40px] text-transparent opacity-[0.1]">
+          <div className="absolute inset-0 top-[50%] bg-gradient-to-b from-transparent to-white to-50%"></div>
+        </div>
+      )}
       <div className="flex h-full w-full justify-center px-5">
         <div className="h-full w-full max-w-5xl">
           <div className="flex w-full flex-col">
@@ -50,7 +55,7 @@ export default function Home() {
             </DarkModeContext.Provider>
 
             <div className="flex justify-center">
-              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[50vh] pt-[12vh] md:pt-0">
+              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[35vh] pt-[12vh] md:pt-0">
                 <div
                   id="about"
                   className="flex min-h-screen w-full scroll-mt-44 items-center"
@@ -80,7 +85,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="mt-40 flex justify-center">
+            <div className="relative mt-80 flex justify-center">
+              <div className="absolute bottom-0 flex h-[210%] w-full select-none justify-center overflow-hidden">
+                <div className="absolute z-[-1] h-full w-[750px]">
+                  <img
+                    src="/grid-footer.png"
+                    alt=""
+                    className="opacity-[0.15] invert dark:opacity-[0.1] dark:invert-0"
+                  />
+                </div>
+              </div>
+
               <Footer />
             </div>
           </div>

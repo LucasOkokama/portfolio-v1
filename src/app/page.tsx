@@ -10,6 +10,7 @@ import Statistics from "@/components/statistics/statistics";
 import BlackHole from "@/components/ui/black-hole";
 import { useThemeContext } from "@/context/ThemeContext";
 import SearchContextProvider from "@/context/SearchContext";
+import Design from "@/components/design/design";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -48,11 +49,15 @@ export default function Home() {
             </motion.div>
             <div className="flex justify-center">
               <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh] pt-[10vh] md:pt-[20vh]">
-                <div
-                  id="about"
-                  className="flex w-full scroll-mt-60"
-                >
+                <div id="about" className="flex w-full scroll-mt-60">
                   <About />
+                </div>
+
+                <div
+                  id="design"
+                  className="hidden w-full [@media(min-width:570px)]:block"
+                >
+                  <Design></Design>
                 </div>
 
                 <div id="skills" className="w-full scroll-mt-60">

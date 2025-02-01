@@ -13,7 +13,7 @@ export default function Canvas({ design }: { design: number }) {
 
   return (
     <div
-      className={`${theme === "light" ? "border-neutral-800 bg-[#527aa3] text-neutral-700/70" : "border-neutral-700/80 bg-[#0e1720] text-neutral-700/50"} relative flex h-[770px] w-[520px] items-center justify-center overflow-hidden rounded-3xl border p-8 pt-20 transition-colors duration-500`}
+      className={`${theme === "light" ? "border-neutral-800 bg-[#527aa3] text-neutral-700/70" : "border-neutral-700/80 bg-[#0e1720] text-neutral-700/50"} relative flex h-[734px] w-[450px] items-center justify-center overflow-hidden rounded-3xl border p-6 pt-20 transition-colors duration-500`}
     >
       {/* Padrão do grid */}
       <svg

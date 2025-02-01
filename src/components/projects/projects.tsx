@@ -71,7 +71,7 @@ export default function Projects() {
     // Fetch the Projects
     const fetchProjects = async () => {
       try {
-        const response = await fetch("/api/projects", {
+        const response = await fetch("/api/projects/json", {
           headers: {
             Accept: "application/json",
             mehotd: "GET",
@@ -104,7 +104,7 @@ export default function Projects() {
         {/* Divider 1 */}
         <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-transparent to-neutral-200 dark:to-neutral-800"></div>
         {/* Title */}
-        <GlitchText text="Projetos" />
+        <GlitchText text="Projects" />
         {/* Divider 2 */}
         <div className="h-[2px] w-[25%] rounded-full bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
       </div>

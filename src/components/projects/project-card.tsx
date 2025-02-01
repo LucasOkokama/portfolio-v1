@@ -5,7 +5,7 @@ import Info from "./project-card/info";
 import FunFact from "./project-card/fun-fact";
 import TechStack from "./project-card/tech-stack";
 import ExternalLinks from "./project-card/external-links";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useThemeContext } from "@/context/ThemeContext";
 
 interface Project {
@@ -56,11 +56,36 @@ const cardProjectFadeIn = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const { theme } = useThemeContext();
+  const [imgPath, setImgPath] = useState<string>("#");
 
-  const imgPath =
-    theme === "dark"
-      ? `/projects/preview/${project.id}/banner-dark.png`
-      : `/projects/preview/${project.id}/banner.png`;
+  useEffect(() => {
+    // Fetch the project image preview
+    const fetchImagePreview = async () => {
+      try {
+        const response = await fetch(
+          `/api/projects/preview?projectId=${project.id}&theme=${theme}`,
+          {
+            headers: {
+              Accept: "application/json",
+              method: "GET",
+            },
+          },
+        );
+
+        if (!response) {
+          throw new Error("Failed to fetch preview image");
+        }
+
+        const data = await response.json();
+        setImgPath(data);
+      } catch (err) {
+        setImgPath("#");
+        console.log(err);
+      }
+    };
+
+    fetchImagePreview();
+  }, []);
 
   return (
     <motion.div
@@ -87,14 +112,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           variants={cardProjectFadeIn}
           className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80"
         >
-          <img
-            src={imgPath}
-            alt={project.name}
-            className="object-contain"
-            onError={(e) =>
-              (e.currentTarget.src = `/projects/preview/${project.id}/banner.png`)
-            }
-          />
+          <img src={imgPath} alt={project.name} className="object-contain" />
         </motion.div>
 
         <div className="relative flex w-full flex-col items-center gap-5 lg:justify-between lg:gap-0 lg:pb-3 lg:pt-2">

@@ -1,14 +1,11 @@
 import { motion } from "motion/react";
 import GlitchText from "../ui/glitch-text/glitch-text";
 import { useEffect, useState } from "react";
-import { Rethink_Sans, Geist, Inter, Lexend } from "next/font/google";
+import { Lexend } from "next/font/google";
 import Canvas from "./canvas";
 import DesignThemeContextProvider from "@/context/DesignThemeContext";
 import { useThemeContext } from "@/context/ThemeContext";
 
-const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
-const geistSans = Geist({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
 const lexend = Lexend({ subsets: ["latin"] });
 
 export default function Design() {
@@ -43,7 +40,6 @@ export default function Design() {
 
   useEffect(() => {
     const defineTopicsColor = () => {
-      console.log(theme);
       if (theme === "light") {
         setColors([
           "bg-neutral-800",
@@ -87,7 +83,7 @@ export default function Design() {
             <motion.label
               id={"design_topic_" + (index + 1).toString()}
               key={index}
-              className={`${lexend.className} relative flex w-full items-end gap-3`}
+              className={`${lexend.className} relative flex w-full items-end gap-3 cursor-pointer`}
             >
               {/* Input */}
               <input

@@ -55,7 +55,7 @@ export default function Home() {
 
                 <div
                   id="design"
-                  className="hidden w-full [@media(min-width:500px)]:block"
+                  className="hidden w-full scroll-mt-60 [@media(min-width:500px)]:block"
                 >
                   <Design></Design>
                 </div>

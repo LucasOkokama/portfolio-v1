@@ -106,6 +106,7 @@ export default function Design() {
                   <motion.span
                     animate={{
                       width: selectedDesign === index + 1 ? "100%" : "0%",
+                      transition: { duration: 0.7 },
                     }}
                     className={`absolute ${colors[index]} bg-clip-text text-transparent`}
                   >
@@ -129,7 +130,10 @@ export default function Design() {
                     <motion.span
                       animate={{
                         width: selectedDesign === index + 1 ? "100%" : "0%",
-                        transition: { delay: 0.08 },
+                        transition: {
+                          duration: 0.7,
+                          delay: 0.08,
+                        },
                       }}
                       className={`absolute whitespace-nowrap ${colors[index]} bg-clip-text text-transparent`}
                     >

@@ -1,6 +1,6 @@
 export default function DownloadResume() {
   return (
-    <div className="flex h-[40px] w-full rounded-lg bg-gradient-to-r from-[#E447A0] to-[#853BE6] text-white">
+    <div className="flex h-[40px] w-[45%] min-w-72 md:w-full rounded-lg bg-gradient-to-r from-[#E447A0] to-[#853BE6] text-white">
       <button className="flex w-full items-center justify-center rounded-l-lg">
         <span className="ml-5 flex gap-2">
           Baixar Currículo

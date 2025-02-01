@@ -28,9 +28,31 @@
       "link": "https://angular.dev/"
     },
     {
+      "name": "NextJS",
+      "file": "nextjs.svg",
+      "link": "https://nextjs.org/"
+    },
+    {
+      "name": "React",
+      "file": "react.svg",
+      "link": "https://react.dev/"
+    },
+    {
       "name": "TailwindCSS",
       "file": "tailwindcss.svg",
       "link": "https://tailwindcss.com/"
+    }
+  ],
+  [
+    {
+      "name": "Motion",
+      "file": "motion.svg",
+      "link": "https://motion.dev/"
+    },
+    {
+      "name": "FuseJS",
+      "file": "fusejs.svg",
+      "link": "https://www.fusejs.io/"
     }
   ]
 ]

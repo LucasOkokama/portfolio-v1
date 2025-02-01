@@ -44,11 +44,11 @@ export default function Menu() {
 
   return (
     <nav
-      className={`duration-800 ${styles.transparentBackground} flex w-full items-stretch justify-between rounded-xl bg-neutral-100/60 px-5 py-2 shadow-md shadow-neutral-900/[0.1] sm:px-8 dark:bg-neutral-950/80 dark:shadow-neutral-100/[0.02]`}
+      className={`duration-800 ${styles.transparentBackground} flex w-full items-stretch justify-between rounded-xl bg-neutral-100/80 px-5 py-2 shadow-md shadow-neutral-900/[0.1] sm:px-8 dark:bg-neutral-950/80 dark:shadow-neutral-100/[0.02]`}
     >
       <MyLogo />
       <div className="flex items-center gap-4">
-        <ul className="hidden gap-5 text-[15px] font-semibold text-neutral-400 sm:flex dark:text-neutral-500">
+        <ul className="hidden gap-5 text-[15px] font-semibold text-neutral-500 sm:flex dark:text-neutral-500">
           {menuItems.map((item, index) => (
             <div className="z-30" key={item}>
               <Tooltip text={(index + 1).toString()} y={10} position="center">

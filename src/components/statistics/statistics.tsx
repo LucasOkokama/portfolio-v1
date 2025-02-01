@@ -15,7 +15,7 @@ export default function Statistics() {
       name: "Framework favorito",
       icon: `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flame"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 10.941c2.333 -3.308 .167 -7.823 -1 -8.941c0 3.395 -2.235 5.299 -3.667 6.706c-1.43 1.408 -2.333 3.621 -2.333 5.588c0 3.704 3.134 6.706 7 6.706s7 -3.002 7 -6.706c0 -1.712 -1.232 -4.403 -2.333 -5.588c-2.084 3.353 -3.257 3.353 -4.667 2.235" /></svg>`,
       value: `
-          <svg width="128px" height="30px" class="ml-[2px] mt-[5px]" viewBox="0 0 512 125" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+          <svg class="ml-[2px] mt-[5px] w-28 md:w-32" viewBox="0 0 512 125" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
     <title>Angular</title>
     <defs>
         <linearGradient x1="0%" y1="48.0651813%" x2="100%" y2="50.3909793%" id="angularLinearGradient-1">
@@ -106,11 +106,11 @@ export default function Statistics() {
         <div className="flex w-full flex-wrap gap-4 md:flex-nowrap">
           {statsInfo.map((stat, index) => (
             <div
-              className="flex w-full flex-col gap-3 rounded-xl border border-neutral-400 px-6 py-4 dark:border-neutral-700/60"
+              className="flex w-full flex-col justify-between gap-3 rounded-xl border border-neutral-400 px-6 py-4 dark:border-neutral-700/60"
               key={index}
             >
               {/* Svgs + Titles */}
-              <div className="flex gap-2 text-neutral-400 items-center">
+              <div className="flex items-center gap-2 text-neutral-400">
                 <div dangerouslySetInnerHTML={{ __html: stat.icon }}></div>
                 <span className={`${lexend.className}`}>{stat.name}</span>
               </div>

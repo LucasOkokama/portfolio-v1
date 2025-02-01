@@ -1,0 +1,18 @@
+{
+  "id": "filmes-statistics-charts",
+  "name": "Filmes Statistics Charts",
+  "type": "Projeto pessoal",
+  "intro": "Ferramenta criada no Excel para acompanhar os filmes assistidos e gerar gráficos e tabelas com um resumo das informações registradas.",
+  "info": [
+    "Este projeto foi desenvolvido com o objetivo de aprender mais sobre manipulação de DataFrames usando Pandas, trabalhar com arquivos Excel através do OpenPyXL e criar gráficos interativos com Plotly.",
+    "Para usá-lo, é necessário preencher as informações dos filmes de acordo com a estrutura da tabela e executar o script Python.",
+    "Os gráficos gerados são interativos, oferecendo uma maneira prática e visual de explorar os dados."
+  ],
+  "funFact": "A inspiração para este projeto surgiu da falta de ferramentas online que permitissem gerar gráficos com base nos filmes assistidos. A partir disso, decidi criar minha própria solução.",
+  "techStack": ["Pandas", "Plotly", "Python"],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/filmes-statistics-charts",
+  "deploy": null,
+  "startDate": "2024-01-25",
+  "finishDate": "2024-02-09"
+}

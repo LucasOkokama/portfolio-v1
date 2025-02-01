@@ -1,0 +1,18 @@
+{
+  "id": "anime-statistics-charts",
+  "name": "Anime Statistics Charts",
+  "type": "Projeto pessoal",
+  "intro": "Um sistema no Excel para armazenar os animes vistos e gerar gráficos e tabelas que resumem esses dados.",
+  "info": [
+    "Este simples projeto foi feito com o intuito de estudar um pouco sobre manipulação de DataFrames com Pandas, arquivos Excel com OpenPyXL e criação de gráficos com Plotly.",
+    "Para utilizá-lo, basta preencher as informações dos animes seguindo a ordem dos campos na tabela e executar o script Python.",
+    "Os gráficos gerados são interativos e facilitam a visualização dos dados."
+  ],
+  "funFact": "Essa ideia surgiu a partir do momento em que não havia nenhum site que gerasse gráficos baseados nos animes vistos e, somado a uma vontade pessoal, resolvi fazer minha própria aplicação.",
+  "techStack": ["Pandas", "Plotly", "Python"],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/anime-statistics-charts",
+  "deploy": null,
+  "startDate": "2024-05-19",
+  "finishDate": "2024-06-03"
+}

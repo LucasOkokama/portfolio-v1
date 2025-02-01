@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 export default function Menu() {
-  const menuItems = ["About", "Skills", "Projects", "Statistics"];
+  const menuItems = ["About", "Design", "Skills", "Projects", "Statistics"];
 
   useEffect(() => {
     // Scrolls to a specific section

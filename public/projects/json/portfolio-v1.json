@@ -1,0 +1,28 @@
+{
+  "id": "portfolio-v1",
+  "name": "Meu portfólio pessoal",
+  "type": "Projeto pessoal",
+  "intro": "Portfólio simples feito com o intuito de compartilhar meus projetos e ferramentas de trabalho.",
+  "info": [
+    "O projeto possui as seções About, Design, Skills, Projects e Statistics.",
+    "A seção About fala sobre mim. Design demonstra meu pensamento ao formular o design de uma aplicação. Skills reúne as ferramentas que domino ou estou estudando. Projects centraliza meus projetos mais relevantes. Statistics exibe alguns dados meus sobre programação.",
+    "Possui dark mode, carrossel de tecnologias, sistema de pesquisa fuzzy, um componente customizado para Tooltip e animações fluidas usando Motion!"
+  ],
+  "funFact": "Primeiro projeto usando NextJS e Motion. Optei por NextJS, pois, por algum motivo, a maioria dos sites feitos com ele são extremamente lindos!",
+  "techStack": [
+    "CSS",
+    "Figma",
+    "FuseJS",
+    "HTML",
+    "Motion",
+    "NextJS",
+    "TailwindCSS",
+    "TypeScript",
+    "Vercel"
+  ],
+  "design": "https://www.figma.com/proto/uGSOYUu6wNWY2nGpwLoBvn/Portfolio?node-id=1-2&p=f&t=hIAqQQhPsH0zjI49-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+  "github": "https://github.com/LucasOkokama/portfolio-v1",
+  "deploy": "https://lucasokokama.vercel.app/",
+  "startDate": "2025-01-20",
+  "finishDate": "2025-02-02"
+}

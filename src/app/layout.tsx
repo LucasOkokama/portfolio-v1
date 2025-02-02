@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rethink_Sans } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider from "@/context/ThemeContext";
+import BlackHoleContextProvider from "@/context/BlackHoleContext";
 
 const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
 
@@ -46,7 +47,9 @@ export default function RootLayout({
       <body
         className={`${rethinkSans.className} bg-white text-black transition-colors duration-500 before:absolute before:z-[-1] before:h-full before:w-full before:bg-texture before:opacity-[3%] dark:bg-neutral-950 dark:text-white`}
       >
-        <ThemeContextProvider>{children}</ThemeContextProvider>
+        <ThemeContextProvider>
+          <BlackHoleContextProvider>{children}</BlackHoleContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );

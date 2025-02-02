@@ -80,7 +80,7 @@ export default function PersonalLinks() {
           initial="hidden"
           animate="visible"
           custom={index}
-          className={`personalLinksItem ${styles.personalLinksItem} relative h-full w-fit rounded-md p-[1px] outline-none`}
+          className={`personalLinksItem ${styles.personalLinksItem} relative w-fit rounded-md p-[1px] outline-none`}
           tabIndex={-1}
         >
           <button className="relative z-[2] flex items-center gap-1 rounded-md border border-neutral-300 bg-neutral-200 px-5 py-2 text-sm dark:border-neutral-800 dark:bg-neutral-900">

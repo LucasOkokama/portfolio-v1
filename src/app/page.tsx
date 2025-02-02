@@ -47,12 +47,13 @@ export default function Home() {
             >
               <Menu />
             </motion.div>
-            <div className="flex justify-center">
-              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh] pt-[10vh] md:pt-[20vh]">
-                <div id="about" className="flex w-full scroll-mt-60">
-                  <About />
-                </div>
 
+            <div className="flex flex-col items-center gap-[30vh] pt-[6vh] md:pt-[12vh]">
+              <div id="about" className="flex w-fit scroll-mt-60">
+                <About />
+              </div>
+
+              <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh]">
                 <div
                   id="design"
                   className="hidden w-full scroll-mt-60 [@media(min-width:500px)]:block"

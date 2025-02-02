@@ -1,20 +1,21 @@
+import { useBlackHoleContext } from "@/context/BlackHoleContext";
 import { useState } from "react";
 
 export default function BlackHole() {
-  const [blackHoleHover, setBlackHoleHover] = useState(false);
+  const { blackHoleHovered, setBlackHoleHovered } = useBlackHoleContext();
 
   return (
     <div className="relative h-full w-full">
       {/* Hover area */}
       <div
-        onMouseEnter={() => setBlackHoleHover(true)}
-        onMouseLeave={() => setBlackHoleHover(false)}
-        className="absolute left-[50%] z-[2] h-[31vh] w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-[120px] lg:h-[46vh] lg:rounded-full"
+        onMouseEnter={() => setBlackHoleHovered(true)}
+        onMouseLeave={() => setBlackHoleHovered(false)}
+        className="absolute left-[50%] z-[2] h-[210px] w-full max-w-md translate-x-[-50%] translate-y-[-50%] rounded-full sm:h-[240px] lg:h-[350px]"
       ></div>
 
       {/* Black hole */}
       <div
-        className={`${blackHoleHover ? "opacity-100" : "opacity-40"} absolute top-[-56vh] z-[-2] flex h-screen w-full flex-col bg-blend-darken duration-300 lg:top-[-50vh]`}
+        className={`${blackHoleHovered ? "opacity-100 lg:top-[-45vh]" : "opacity-40 lg:top-[-57vh]"} absolute top-[-60vh] z-[-2] flex h-screen w-full flex-col bg-blend-darken delay-75 duration-1000`}
       >
         <video
           autoPlay

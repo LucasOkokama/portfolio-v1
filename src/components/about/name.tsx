@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useBlackHoleContext } from "@/context/BlackHoleContext";
+import { delay, motion } from "motion/react";
 import { Ubuntu_Sans_Mono } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 
@@ -9,15 +10,39 @@ const ubuntoSansMono = Ubuntu_Sans_Mono({
   weight: ["400", "700"],
 });
 
-const nameFadeIn = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-};
-
 export default function Name() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [originalName, setOriginalName] = useState("");
+  const { blackHoleHovered } = useBlackHoleContext();
+
+  const nameFadeIn = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+      y: 75,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const nameFadeOut = {
+    visible: {
+      opacity: 0,
+      scale: 0.5,
+      y: 75,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
 
   const alphabet =
     "�0123456789�abcdefghijklmnopqrstuvwxyz�ABCDEFGHIJKLMNOPQRSTUVWXYZ�.,;:-_!?@#$%^&*()=+|<>~`�";
@@ -77,13 +102,13 @@ export default function Name() {
     // Name
     <motion.div
       onMouseEnter={decryptEffect}
-      variants={nameFadeIn}
+      variants={blackHoleHovered ? nameFadeOut : nameFadeIn}
       initial="hidden"
       animate="visible"
     >
       <h1
         ref={nameRef}
-        className={`${ubuntoSansMono.className} w-fit bg-gradient-to-r from-[#A259F6] to-[#0BB3D5] bg-clip-text text-[38px] font-extrabold text-transparent sm:text-[42px]`}
+        className={`${ubuntoSansMono.className} w-fit bg-gradient-to-r from-[#A259F6] to-[#0BB3D5] bg-clip-text text-[38px] font-extrabold text-transparent sm:text-[54px]`}
         data-original-name={originalName}
       ></h1>
     </motion.div>

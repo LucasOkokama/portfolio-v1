@@ -1,5 +1,6 @@
 "use client";
 
+import { useBlackHoleContext } from "@/context/BlackHoleContext";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
@@ -26,6 +27,35 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 export default function Role() {
   const typewriterTextRef = useRef<HTMLSpanElement>(null);
   const [style, setStyle] = useState({ background: "", color: "" });
+  const { blackHoleHovered } = useBlackHoleContext();
+
+  const nameFadeIn = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.45,
+      },
+    },
+  };
+
+  const nameFadeOut = {
+    visible: {
+      opacity: 0,
+      scale: 0.5,
+      y: 50,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
 
   useEffect(() => {
     let currentRoleIndex = 0;
@@ -62,7 +92,12 @@ export default function Role() {
   }, []);
 
   return (
-    <h3 className="flex items-center gap-[2px] text-xl font-bold h-full">
+    <motion.h3
+      variants={blackHoleHovered ? nameFadeOut : nameFadeIn}
+      initial="hidden"
+      animate="visible"
+      className="flex h-full items-center justify-center gap-[2px] text-xl font-bold lg:text-2xl"
+    >
       <div className="relative">
         {/* Role text */}
         <span
@@ -83,9 +118,7 @@ export default function Role() {
         initial="hidden"
         animate="visible"
         className="block h-[85%] w-[3px] select-none bg-slate-600 text-blue-500 text-transparent"
-      >
-        
-      </motion.span>
-    </h3>
+      ></motion.span>
+    </motion.h3>
   );
 }

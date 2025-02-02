@@ -39,11 +39,13 @@ export default function Projects() {
   // Fuse.js
   const fuse = new Fuse<Project>(projectsData, {
     keys: [
-      "name",
-      "type",
-      "techStack",
+      { name: "id", weight: 1 },
+      { name: "name", weight: 1.5 },
+      { name: "type", weight: 0.5 },
+      { name: "techStack", weight: 2 },
       {
         name: "finishDate",
+        weight: 0.5,
         getFn: formatFinishDateForSearch,
       },
     ],

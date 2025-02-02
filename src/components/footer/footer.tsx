@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Rethink_Sans, Geist, Inter, Lexend } from "next/font/google";
-
-const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
-const geistSans = Geist({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
-const lexend = Lexend({ subsets: ["latin"] });
 
 export default function Footer() {
   const [isDarkMode, setIsDarkMode] = useState(false);

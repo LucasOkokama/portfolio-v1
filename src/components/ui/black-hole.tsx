@@ -1,5 +1,4 @@
 import { useBlackHoleContext } from "@/context/BlackHoleContext";
-import { useState } from "react";
 
 export default function BlackHole() {
   const { blackHoleHovered, setBlackHoleHovered } = useBlackHoleContext();

@@ -24,9 +24,7 @@ interface Project {
 }
 
 export default function Projects() {
-  const [loading, setLoading] = useState(null);
   const [projectsData, setProjectsData] = useState<Project[]>([]);
-  const [error, setError] = useState<string | null>(null);
   const { searchValue, showMoreCount, setShowMoreCount } = useSearchContext();
 
   // Format the finishDate to make the search more accurate
@@ -87,7 +85,6 @@ export default function Projects() {
         const data = await response.json();
         setProjectsData(data.projectsData);
       } catch (err) {
-        setError("Failed to load projects");
         console.error(err);
       }
     };

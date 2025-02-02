@@ -12,7 +12,7 @@ const urbanist = Urbanist({ subsets: ["latin"] });
 
 export default function Colorization() {
   const { theme } = useDesignThemeContext();
-  const [imageHovered, setImageHovered] = useState(false);
+  const [, setImageHovered] = useState(false);
   const [liked, setLiked] = useState(false);
   const [countLikes, setCountLikes] = useState(78);
 

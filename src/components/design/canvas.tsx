@@ -1,4 +1,3 @@
-import styles from "./css/design.module.css";
 import { useDesignThemeContext } from "@/context/DesignThemeContext";
 import Animation from "./steps/animation";
 import Structure from "./steps/structure";

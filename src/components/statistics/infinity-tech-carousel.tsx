@@ -1,7 +1,6 @@
 import styles from "./css/tech.module.css";
 import Tech from "./tech";
 import { motion } from "framer-motion"; // Certifique-se de que você está importando do pacote correto
-import { useEffect } from "react";
 
 interface InfinityTechCarouselProps {
   techs: string[];

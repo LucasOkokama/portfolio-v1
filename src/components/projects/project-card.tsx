@@ -1,3 +1,4 @@
+import styles from "./css/projects.module.css";
 import { motion } from "motion/react";
 import ProjectDate from "./project-card/project-date";
 import NameType from "./project-card/name-type";
@@ -5,7 +6,7 @@ import Info from "./project-card/info";
 import FunFact from "./project-card/fun-fact";
 import TechStack from "./project-card/tech-stack";
 import ExternalLinks from "./project-card/external-links";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useThemeContext } from "@/context/ThemeContext";
 
 interface Project {
@@ -57,6 +58,50 @@ const cardProjectFadeIn = {
 export default function ProjectCard({ project }: { project: Project }) {
   const { theme } = useThemeContext();
   const [imgPath, setImgPath] = useState<string>("#");
+  let zoomValue: number = 2;
+  const zoomParentRef = useRef<HTMLDivElement>(null);
+  const zoomChildRef = useRef<HTMLImageElement>(null);
+
+  const handleZoomEffect = (e: React.MouseEvent<HTMLDivElement>) => {
+    let zoomParent = null;
+    let zoomChild = null;
+
+    if (zoomParentRef.current && zoomChildRef.current) {
+      zoomParent = zoomParentRef.current;
+      zoomChild = zoomChildRef.current;
+
+      const { left, top, width, height } = zoomParent.getBoundingClientRect();
+
+      zoomChild.style.setProperty(
+        "--x",
+        `${((e.clientX - left) / width) * 100}%`,
+      );
+      zoomChild.style.setProperty(
+        "--y",
+        `${((e.clientY - top) / height) * 100}%`,
+      );
+    }
+  };
+
+  const increaseZoomValue = () => {
+    // Max value = 5
+    if (zoomValue < 5) {
+      zoomValue += 1;
+    }
+    if (zoomParentRef.current) {
+      zoomParentRef.current.style.setProperty("--zoom", zoomValue.toString());
+    }
+  };
+
+  const decreaseZoomValue = () => {
+    // Min value = 2
+    if (zoomValue > 2) {
+      zoomValue -= 1;
+    }
+    if (zoomParentRef.current) {
+      zoomParentRef.current.style.setProperty("--zoom", zoomValue.toString());
+    }
+  };
 
   useEffect(() => {
     // Fetch the project image preview
@@ -85,7 +130,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     };
 
     fetchImagePreview();
-  }, []);
+  }, [theme]);
 
   return (
     <motion.div
@@ -109,10 +154,73 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-col gap-3 lg:h-[500px] lg:flex-row lg:gap-8">
         {/* Project Banner */}
         <motion.div
+          onMouseMove={handleZoomEffect}
+          onMouseEnter={() => {
+            zoomParentRef.current?.style.setProperty(
+              "--zoom",
+              zoomValue.toString(),
+            );
+          }}
+          onMouseLeave={() => {
+            zoomParentRef.current?.style.setProperty("--zoom", "1");
+          }}
+          ref={zoomParentRef}
           variants={cardProjectFadeIn}
-          className="h-full max-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-h-none lg:max-w-80"
+          className={`${styles.projectImgContainer} group relative h-full min-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-w-80`}
         >
-          <img src={imgPath} alt={project.name} className="object-contain" />
+          <img
+            ref={zoomChildRef}
+            src={imgPath}
+            alt={project.name}
+            className={`${styles.projectImgZoom} absolute h-full w-full object-cover object-top`}
+          />
+
+          <div className="absolute bottom-2 right-2 flex gap-2">
+            <div
+              onClick={() => {
+                increaseZoomValue();
+              }}
+              className="h-fit w-fit cursor-pointer select-none rounded-lg bg-neutral-300 p-1 opacity-0 duration-1000 group-hover:opacity-100 dark:bg-neutral-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 5l0 14" />
+                <path d="M5 12l14 0" />
+              </svg>
+            </div>
+
+            <div
+              onClick={() => {
+                decreaseZoomValue();
+              }}
+              className="h-fit w-fit cursor-pointer select-none rounded-lg bg-neutral-300 p-1 opacity-0 duration-1000 group-hover:opacity-100 dark:bg-neutral-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 12l14 0" />
+              </svg>
+            </div>
+          </div>
         </motion.div>
 
         <div className="relative flex w-full flex-col items-center gap-5 lg:justify-between lg:gap-0 lg:pb-3 lg:pt-2">

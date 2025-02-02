@@ -1,3 +1,9 @@
+.projectImgZoom {
+  transform: scale(var(--zoom));
+  transform-origin: var(--x) var(--y);
+  transition: transform 2s ease-in-out;
+}
+
 .showMoreLightEffect {
   position: absolute;
   left: var(--mouse-x);

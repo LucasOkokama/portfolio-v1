@@ -49,29 +49,41 @@ export default function Home() {
             </motion.div>
 
             <div className="flex flex-col items-center gap-[30vh] pt-[6vh] md:pt-[12vh]">
-              <div id="about" className="flex w-fit scroll-mt-60">
+              <div
+                id="about"
+                className="flex w-fit scroll-mt-36 lg:scroll-mt-60"
+              >
                 <About />
               </div>
 
               <div className="flex h-full w-full max-w-4xl flex-col items-center justify-center gap-[30vh]">
                 <div
                   id="design"
-                  className="hidden w-full scroll-mt-60 [@media(min-width:500px)]:block"
+                  className="hidden w-full scroll-mt-36 lg:scroll-mt-60 [@media(min-width:500px)]:block"
                 >
                   <Design></Design>
                 </div>
 
-                <div id="skills" className="w-full scroll-mt-60">
+                <div
+                  id="skills"
+                  className="w-full scroll-mt-36 lg:scroll-mt-60"
+                >
                   <Skills />
                 </div>
 
-                <div id="projects" className="w-full scroll-mt-60">
+                <div
+                  id="projects"
+                  className="w-full scroll-mt-36 lg:scroll-mt-60"
+                >
                   <SearchContextProvider>
                     <Projects />
                   </SearchContextProvider>
                 </div>
 
-                <div id="statistics" className="w-full scroll-mt-60">
+                <div
+                  id="statistics"
+                  className="w-full scroll-mt-36 lg:scroll-mt-60"
+                >
                   <Statistics />
                 </div>
               </div>

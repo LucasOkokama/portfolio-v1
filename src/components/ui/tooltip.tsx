@@ -91,7 +91,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
               marginTop: `${y}px`,
               left: `${tooltipPosition}px`,
             }}
-            className="pointer-events-none absolute left-0 z-[1] whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/80 px-3 py-[6px] text-sm text-neutral-900 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/80 dark:text-white"
+            className="pointer-events-none absolute left-0 z-[1] whitespace-nowrap rounded-md border border-neutral-400/60 bg-neutral-200/90 px-3 py-[6px] text-sm text-neutral-900 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/90 dark:text-white"
           >
             {text}
           </motion.span>

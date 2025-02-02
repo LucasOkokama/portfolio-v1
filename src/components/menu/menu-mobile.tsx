@@ -130,7 +130,7 @@ export default function MenuMobile() {
                   <motion.li
                     variants={menuItemsFadeIn}
                     custom={index}
-                    className="flex cursor-pointer items-center gap-3 rounded-lg p-2 text-sm transition-colors duration-200 hover:bg-neutral-300/70 hover:text-neutral-900 dark:hover:bg-neutral-800/70 dark:hover:text-neutral-200"
+                    className={`${item.name === "Design" ? "hidden [@media(min-width:500px)]:flex" : "flex"} cursor-pointer items-center gap-3 rounded-lg p-2 text-sm transition-colors duration-200 hover:bg-neutral-300/70 hover:text-neutral-900 dark:hover:bg-neutral-800/70 dark:hover:text-neutral-200`}
                   >
                     {/* Items icons */}
                     <span

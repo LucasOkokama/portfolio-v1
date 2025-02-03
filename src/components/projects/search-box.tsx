@@ -48,7 +48,7 @@ export default function SearchBox() {
   return (
     <div className="relative w-full max-w-xl rounded-lg text-neutral-400 focus-within:text-neutral-700 dark:text-neutral-600 dark:focus-within:text-neutral-400">
       <svg
-        className="absolute left-4 top-[10]"
+        className="absolute left-4 top-[10px]"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
@@ -65,7 +65,7 @@ export default function SearchBox() {
       </svg>
       <input
         ref={inputRef}
-        className="w-full rounded-lg border border-neutral-400 bg-neutral-100 px-[49] py-2 placeholder-neutral-400 focus:placeholder-neutral-700 focus:outline focus:outline-neutral-500 dark:border-neutral-700/50 dark:bg-neutral-900 dark:placeholder-neutral-600 dark:focus:placeholder-neutral-500"
+        className="w-full rounded-lg border border-neutral-400 bg-neutral-100 px-[49px] py-2 placeholder-neutral-400 focus:placeholder-neutral-700 focus:outline focus:outline-neutral-500 dark:border-neutral-700/50 dark:bg-neutral-900 dark:placeholder-neutral-600 dark:focus:placeholder-neutral-500"
         type="text"
         placeholder="Pesquise por um projeto ou tecnologia"
         onChange={handleInputChange}

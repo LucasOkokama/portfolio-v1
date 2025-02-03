@@ -77,6 +77,56 @@ For development, I used Next.js (React) for structuring the project, TailwindCSS
 
 
 
+# Structure
+```
+├─ .gitignore
+├─ .prettierrc
+├─ README.md
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ tailwind.config.ts
+├─ tsconfig.json
+├─ vercel.json
+├─ public
+│  ├─ about
+│  ├─ design
+│  ├─ projects
+│  │  ├─ json
+│  │  └─ preview
+│  └─ skills
+│     ├─ backend.json
+│     ├─ frontend.json
+│     ├─ icons
+│     │  ├─ colorized
+│     │  └─ solid
+│     └─ tools.json
+├─ src
+│  ├─ app
+│  │  ├─ api
+│  │  │  └─ projects
+│  │  │     ├─ json
+│  │  │     └─ preview
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  └─ page.tsx
+│  ├─ components
+│  │  ├─ about
+│  │  ├─ design
+│  │  ├─ footer
+│  │  ├─ menu
+│  │  ├─ projects
+│  │  ├─ skills
+│  │  ├─ statistics
+│  │  └─ ui
+│  └─ context
+```
+
+
+
 # Requirements
 1. Install [`Node.js`](https://nodejs.org/en) and ensure it includes the `npm` package manager.
 
@@ -104,24 +154,13 @@ http://localhost:3000
 
 # Inspiration
 ## Major Inspirations
-[Sankalp Sinha](https://sankalpsinha.com/)
-[Nelson Lai](https://honghong.me/)
-[Enji Kusnadi](https://www.enji.dev/)
-[Igor Kowalczyk](https://igorkowalczyk.dev/)
-[Ryan Aulia](https://aulianza.id/)
+- [Sankalp Sinha](https://sankalpsinha.com/)
+- [Nelson Lai](https://honghong.me/)
+- [Enji Kusnadi](https://www.enji.dev/)
+- [Igor Kowalczyk](https://igorkowalczyk.dev/)
+- [Ryan Aulia](https://aulianza.id/)
 
 ## Additional Inspirations
-[Theodorus Clarence](https://theodorusclarence.com/)
-[p0](https://p0.inc/)
-[Sanidhya Verma](https://spaceportfolio.netlify.app/)
-
-
-
-
-
-
-
-
-
-
-
+- [Theodorus Clarence](https://theodorusclarence.com/)
+- [p0](https://p0.inc/)
+- [Sanidhya Verma](https://spaceportfolio.netlify.app/)

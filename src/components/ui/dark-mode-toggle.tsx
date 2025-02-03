@@ -35,7 +35,7 @@ export default function DarkModeToggle() {
   useEffect(() => {
     const userTheme = localStorage.getItem("theme") || "system";
     setThemeSelected(themes.indexOf(userTheme));
-  }, [themes]);
+  }, []);
 
   // Function that will add or remove the class "dark", save the theme in the localStorage, change the theme icon
   useEffect(() => {

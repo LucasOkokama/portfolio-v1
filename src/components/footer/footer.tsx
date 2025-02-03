@@ -35,7 +35,7 @@ export default function Footer() {
               alt={item}
               width={28} // Ajuste o valor conforme necessário
               height={28} // Ajuste o valor conforme necessário
-              className="rounded-t-xl"
+              className="pointer-events-none rounded-t-xl"
             />
           </motion.div>
         ))}

@@ -9,6 +9,7 @@ import PersonalLinks from "./personal-links";
 import { useEffect, useState } from "react";
 import { useThemeContext } from "@/context/ThemeContext";
 import { useBlackHoleContext } from "@/context/BlackHoleContext";
+import Image from "next/image";
 
 const geistSans = Geist({ subsets: ["latin"] });
 const ibmPlexMono = IBM_Plex_Mono({
@@ -52,7 +53,7 @@ export default function About() {
 
   useEffect(() => {
     if (blackHoleHovered) setPfpPath("pfp-dark-blackhole.png");
-    else setPfpPath("pfp-dark.png")
+    else setPfpPath("pfp-dark.png");
   }, [blackHoleHovered]);
 
   const quickIntro = [
@@ -98,10 +99,13 @@ export default function About() {
         {/* Left Column */}
         <div className="flex flex-col items-center gap-6">
           {/* Profile picture */}
-          <img
+          <Image
             src={`/${pfpPath}`}
             alt="my profile picture"
             className="w-[350px] bg-transparent"
+            width={350}
+            height={470}
+            priority
           />
 
           {/* Download resume button */}
@@ -141,11 +145,13 @@ export default function About() {
                     key={index}
                     className="items-top relative flex gap-4"
                   >
-                    <img
+                    <Image
                       className="mt-[2px] h-4 w-4"
                       src={`/about/${item.icon}`}
                       alt={`${item.icon} icon`}
-                    ></img>
+                      width={16}
+                      height={16}
+                    />
                     <p
                       className={`${ibmPlexMono.className} text-[14px] text-neutral-700 dark:text-neutral-400`}
                       dangerouslySetInnerHTML={{ __html: item.text }}

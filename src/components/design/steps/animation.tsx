@@ -2,6 +2,7 @@ import { useDesignThemeContext } from "@/context/DesignThemeContext";
 import { motion } from "motion/react";
 
 import { Lexend, Poppins, Urbanist } from "next/font/google";
+import Image from "next/image";
 import { useState } from "react";
 
 const lexend = Lexend({ subsets: ["latin"] });
@@ -122,13 +123,18 @@ export default function Animation() {
           NOVO
         </motion.span>
         {/* Banner IMG */}
-        <motion.img
+        <motion.div
           whileHover={{ scale: 1.12 }}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          src="/design/design-card.png"
-          alt="design card"
-          className="rounded-t-xl"
-        />
+        >
+          <Image
+            src="/design/design-card.png"
+            alt="design card"
+            width={400}
+            height={225}
+            className="rounded-t-xl"
+          />
+        </motion.div>
       </div>
 
       {/* Content */}
@@ -252,10 +258,12 @@ export default function Animation() {
               href="https://www.imdb.com/name/nm0799777/"
               target="_blank"
             >
-              <img
+              <Image
                 src="/design/jjj.png"
                 alt="J. Jonah Jameson"
                 className="w-[90px] rounded-full"
+                width={90}
+                height={90}
               />
             </motion.a>
           </div>

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Ubuntu_Sans_Mono } from "next/font/google";
 import { useSearchContext } from "@/context/SearchContext";
+import Image from "next/image";
 
 const ubuntoSansMono = Ubuntu_Sans_Mono({
   subsets: ["latin"],
@@ -55,14 +56,18 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
           custom={index}
           key={index}
           className="flex cursor-pointer select-none items-center gap-2 rounded-[4px] border border-neutral-400 px-[7px] py-[5px] duration-100 hover:bg-neutral-200 dark:border-neutral-700/70 dark:hover:bg-neutral-800/80"
-          onClick={() => setSearchValue((prev) => prev != "" ? prev + " " + item : item)} // Add tech stack tag to search
+          onClick={() =>
+            setSearchValue((prev) => (prev != "" ? prev + " " + item : item))
+          } // Add tech stack tag to search
         >
           {/* Tech icon */}
-          <img
+          <Image
             src={`/skills/icons/colorized/${formatItemName(item)}.svg`}
             className="h-[16px] w-[16px] rounded-sm"
             alt={item + " icon"}
             style={getImageFilter(item)} // Style to change the color of black/white logos
+            width={16}
+            height={16}
           />
           {/* Tech name */}
           <p

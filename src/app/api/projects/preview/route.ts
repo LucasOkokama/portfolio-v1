@@ -54,6 +54,7 @@ export async function GET(res: Request) {
     }
 
     previewPath = await previewPath.replace(process.cwd() + path.sep + "public", "");
+    previewPath = path.normalize(previewPath).replace(/\\/g, "/");
 
     return NextResponse.json(previewPath)
   }

@@ -40,7 +40,7 @@ export default function Menu() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [menuItems]);
 
   return (
     <nav

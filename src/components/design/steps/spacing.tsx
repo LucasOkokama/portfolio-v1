@@ -1,4 +1,5 @@
 import { useDesignThemeContext } from "@/context/DesignThemeContext";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Spacing() {
@@ -103,7 +104,13 @@ export default function Spacing() {
           NOVO
         </span>
         {/* Banner IMG */}
-        <img src="/design/design-card.png" alt="design card" className="" />
+        <Image
+          src="/design/design-card.png"
+          alt="design card"
+          width={400}
+          height={225}
+          className=""
+        />
       </div>
 
       {/* Content */}
@@ -176,10 +183,12 @@ export default function Spacing() {
           {/* Author IMG */}
           <div className="flex">
             <a href="https://www.imdb.com/name/nm0799777/" target="_blank">
-              <img
+              <Image
                 src="/design/jjj.png"
                 alt="J. Jonah Jameson"
                 className="w-[90px]"
+                width={90}
+                height={90}
               />
             </a>
           </div>

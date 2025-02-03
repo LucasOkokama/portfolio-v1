@@ -1,7 +1,7 @@
 "use client";
 
 import { useBlackHoleContext } from "@/context/BlackHoleContext";
-import { delay, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Ubuntu_Sans_Mono } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 

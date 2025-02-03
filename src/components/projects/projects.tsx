@@ -95,7 +95,7 @@ export default function Projects() {
   // Reset the show more count when a search is done
   useEffect(() => {
     setShowMoreCount(3);
-  }, [searchValue]);
+  }, [searchValue, setShowMoreCount]);
 
   return (
     <div className="flex w-full flex-col items-center gap-14">

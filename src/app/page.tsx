@@ -11,6 +11,7 @@ import BlackHole from "@/components/ui/black-hole";
 import { useThemeContext } from "@/context/ThemeContext";
 import SearchContextProvider from "@/context/SearchContext";
 import Design from "@/components/design/design";
+import Image from "next/image";
 
 const menuFadeIn = {
   hidden: { y: -200 },
@@ -92,10 +93,11 @@ export default function Home() {
               {/* Grid background */}
               <div className="absolute bottom-0 flex h-[184%] w-full select-none justify-center overflow-hidden">
                 <div className="absolute z-[-1] h-full w-[750px]">
-                  <img
+                  <Image
                     src="/grid-footer.png"
-                    alt=""
+                    alt="grid footer"
                     className="opacity-[0.1] invert dark:invert-0"
+                    fill
                   />
                 </div>
               </div>

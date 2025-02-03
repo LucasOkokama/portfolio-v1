@@ -4,6 +4,7 @@ import { motion, useInView } from "motion/react";
 import { Lexend } from "next/font/google";
 import Tooltip from "../ui/tooltip";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -49,11 +50,11 @@ export default function SkillsCard({ type }: { type: string }) {
     }
 
     getSkills(type);
-  }, []);
+  }, [type]);
 
   useEffect(() => {
     setIsDarkMode(document.documentElement.classList.contains("dark"));
-  });
+  }, []);
 
   return (
     // Skills Card Container (gradient border)
@@ -99,7 +100,7 @@ export default function SkillsCard({ type }: { type: string }) {
                       className="select-none"
                     >
                       <a href={item.link} target="_black">
-                        <img
+                        <Image
                           src={`/skills/icons/solid/${item.file}`}
                           alt={item.name}
                           className="w-10"
@@ -109,6 +110,8 @@ export default function SkillsCard({ type }: { type: string }) {
                               ? "invert(100%) sepia(4%) saturate(141%) hue-rotate(256deg) brightness(114%) contrast(76%)"
                               : "invert(24%) sepia(15%) saturate(0%) hue-rotate(296deg) brightness(106%) contrast(88%)",
                           }}
+                          width={40}
+                          height={40}
                         />
                       </a>
                     </motion.div>

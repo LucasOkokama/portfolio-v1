@@ -68,7 +68,7 @@ export default function Tooltip({ children, text, y, position }: Props) {
         document.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [isTooltipVisible]);
+  }, [isTooltipVisible, position]);
 
   return (
     <div className="relative">

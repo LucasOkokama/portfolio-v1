@@ -1,15 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
+import { useThemeContext } from "@/context/ThemeContext";
 
 export default function Footer() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme } = useThemeContext();
   const constraintsRef = useRef(null);
   const madeWith = ["nextjs.svg", "tailwindcss.svg", "motion.svg", "figma.svg"];
   const currentYear: number = new Date().getFullYear();
-
-  useEffect(() => {
-    setIsDarkMode(document.documentElement.classList.contains("dark"));
-  });
 
   return (
     <div className="relative flex w-full max-w-md flex-col items-center justify-center pb-8">
@@ -18,21 +16,28 @@ export default function Footer() {
       <div className="mb-2 flex select-none items-center gap-2 text-xs">
         <span className="p-1">MADE WITH</span>
         {madeWith.map((item, index) => (
-          <motion.img
+          <motion.div
             drag
             dragConstraints={constraintsRef}
             whileTap={{ scale: 1.3 }}
-            src={`/skills/icons/solid/${item}`}
-            alt={item}
             key={index}
             className="w-7 cursor-pointer p-1"
-            // Change SVG color using filter
+            // Change svg color using filter
             style={{
-              filter: isDarkMode
-                ? "invert(100%) sepia(4%) saturate(141%) hue-rotate(256deg) brightness(114%) contrast(76%)"
-                : "invert(24%) sepia(15%) saturate(0%) hue-rotate(296deg) brightness(106%) contrast(88%)",
+              filter:
+                theme === "dark"
+                  ? "invert(100%) sepia(4%) saturate(141%) hue-rotate(256deg) brightness(114%) contrast(76%)"
+                  : "invert(24%) sepia(15%) saturate(0%) hue-rotate(296deg) brightness(106%) contrast(88%)",
             }}
-          />
+          >
+            <Image
+              src={`/skills/icons/solid/${item}`}
+              alt={item}
+              width={28} // Ajuste o valor conforme necessário
+              height={28} // Ajuste o valor conforme necessário
+              className="rounded-t-xl"
+            />
+          </motion.div>
         ))}
       </div>
       <div className="font-ultralight flex w-fit flex-col items-center gap-1 text-sm text-neutral-400 md:flex-row dark:text-neutral-500">

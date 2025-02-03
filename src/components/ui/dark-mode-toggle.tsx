@@ -35,7 +35,7 @@ export default function DarkModeToggle() {
   useEffect(() => {
     const userTheme = localStorage.getItem("theme") || "system";
     setThemeSelected(themes.indexOf(userTheme));
-  }, []);
+  }, [themes]);
 
   // Function that will add or remove the class "dark", save the theme in the localStorage, change the theme icon
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function DarkModeToggle() {
     }
 
     handleThemeChange();
-  }, [themeSelected]);
+  }, [themeSelected, icons, setTheme, themes]);
 
   // Shortcut to change the theme
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function DarkModeToggle() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [changeTheme]);
 
   // Change the theme selected
   function changeTheme() {

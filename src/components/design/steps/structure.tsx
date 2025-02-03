@@ -1,4 +1,5 @@
 import { useDesignThemeContext } from "@/context/DesignThemeContext";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Structure() {
@@ -97,13 +98,15 @@ export default function Structure() {
         className="relative overflow-hidden"
       >
         {/* Banner Tag */}
-        <span
-          className={`absolute z-[2] bg-[#fffb01] text-black`}
-        >
-          NOVO
-        </span>
+        <span className={`absolute z-[2] bg-[#fffb01] text-black`}>NOVO</span>
         {/* Banner IMG */}
-        <img src="/design/design-card.png" alt="design card" className="" />
+        <Image
+          src="/design/design-card.png"
+          alt="design card"
+          width={400}
+          height={225}
+          className=""
+        />
       </div>
 
       {/* Content */}
@@ -176,10 +179,12 @@ export default function Structure() {
           {/* Author IMG */}
           <div className="flex">
             <a href="https://www.imdb.com/name/nm0799777/" target="_blank">
-              <img
+              <Image
                 src="/design/jjj.png"
                 alt="J. Jonah Jameson"
                 className="w-[90px]"
+                width={90}
+                height={90}
               />
             </a>
           </div>

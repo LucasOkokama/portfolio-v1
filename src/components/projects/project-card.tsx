@@ -8,6 +8,7 @@ import TechStack from "./project-card/tech-stack";
 import ExternalLinks from "./project-card/external-links";
 import { useEffect, useRef, useState } from "react";
 import { useThemeContext } from "@/context/ThemeContext";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -57,7 +58,7 @@ const cardProjectFadeIn = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const { theme } = useThemeContext();
-  const [imgPath, setImgPath] = useState<string>("#");
+  const [imgPath, setImgPath] = useState<string>(`/projects/preview/${project.id}/banner.png`);
   let zoomValue: number = 2;
   const zoomParentRef = useRef<HTMLDivElement>(null);
   const zoomChildRef = useRef<HTMLImageElement>(null);
@@ -124,13 +125,13 @@ export default function ProjectCard({ project }: { project: Project }) {
         const data = await response.json();
         setImgPath(data);
       } catch (err) {
-        setImgPath("#");
+        setImgPath(`/projects/preview/${project.id}/banner.png`);
         console.log(err);
       }
     };
 
     fetchImagePreview();
-  }, [theme]);
+  }, [theme, project.id]);
 
   return (
     <motion.div
@@ -168,11 +169,12 @@ export default function ProjectCard({ project }: { project: Project }) {
           variants={cardProjectFadeIn}
           className={`${styles.projectImgContainer} group relative h-full min-h-96 w-full overflow-hidden rounded-xl border border-neutral-700/80 lg:max-w-80`}
         >
-          <img
+          <Image
             ref={zoomChildRef}
             src={imgPath}
             alt={project.name}
             className={`${styles.projectImgZoom} absolute h-full w-full object-cover object-top`}
+            fill
           />
 
           <div className="absolute bottom-2 right-2 flex gap-2">

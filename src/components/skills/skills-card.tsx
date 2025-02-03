@@ -5,6 +5,7 @@ import { Lexend } from "next/font/google";
 import Tooltip from "../ui/tooltip";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useThemeContext } from "@/context/ThemeContext";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -34,7 +35,7 @@ interface Item {
 }
 
 export default function SkillsCard({ type }: { type: string }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme } = useThemeContext();
   const [stackData, setStackData] = useState<Item[][]>([]);
   const parentRef = useRef(null);
   const isInView = useInView(parentRef);
@@ -51,10 +52,6 @@ export default function SkillsCard({ type }: { type: string }) {
 
     getSkills(type);
   }, [type]);
-
-  useEffect(() => {
-    setIsDarkMode(document.documentElement.classList.contains("dark"));
-  }, []);
 
   return (
     // Skills Card Container (gradient border)
@@ -106,7 +103,7 @@ export default function SkillsCard({ type }: { type: string }) {
                           className="w-10"
                           // Change SVG color using filter
                           style={{
-                            filter: isDarkMode
+                            filter: theme === "dark"
                               ? "invert(100%) sepia(4%) saturate(141%) hue-rotate(256deg) brightness(114%) contrast(76%)"
                               : "invert(24%) sepia(15%) saturate(0%) hue-rotate(296deg) brightness(106%) contrast(88%)",
                           }}

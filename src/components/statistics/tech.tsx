@@ -1,5 +1,6 @@
 "use client";
 
+import { useThemeContext } from "@/context/ThemeContext";
 import { Lexend } from "next/font/google";
 import Image from "next/image";
 
@@ -8,7 +9,7 @@ const lexend = Lexend({ subsets: ["latin"] });
 import { useEffect, useState } from "react";
 
 export default function Tech({ item }: { item: string }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme } = useThemeContext();
   // Logos that need color inversion for dark mode
   const blackWhiteIcons = ["flask", "pandas", "vercel", "nextjs", "motion"];
 
@@ -21,16 +22,12 @@ export default function Tech({ item }: { item: string }) {
   function getImageFilter(name: string) {
     if (blackWhiteIcons.includes(name.toLocaleLowerCase())) {
       return {
-        filter: isDarkMode
+        filter: theme === "dark"
           ? "invert(100%) sepia(4%) saturate(141%) hue-rotate(256deg) brightness(114%) contrast(76%)"
           : "invert(24%) sepia(15%) saturate(0%) hue-rotate(296deg) brightness(106%) contrast(88%)",
       };
     }
   }
-
-  useEffect(() => {
-    setIsDarkMode(document.documentElement.classList.contains("dark"));
-  }, []);
 
   return (
     <div className="relative flex shrink-0 items-center gap-[6px] rounded-full border border-neutral-400/60 bg-neutral-200/70 px-3 py-[7px] duration-100 hover:border-neutral-500/80 hover:bg-neutral-300/80 dark:border-neutral-700/80 dark:bg-neutral-800/70 dark:hover:border-neutral-600 dark:hover:bg-neutral-700/70">

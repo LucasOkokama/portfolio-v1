@@ -7,8 +7,9 @@ import BlackHoleContextProvider from "@/context/BlackHoleContext";
 const rethinkSans = Rethink_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Meu Portfolio",
-  description: "Explore meu trabalho profissional, projetos e conquistas.",
+  title: "Lucas Okokama - Frontend Developer",
+  description:
+    "Explore my professional journey, skills, projects, and accomplishments. Learn about the tools I use and how I approach challenges, with insights into my work process and the impact of my contributions.",
 };
 
 export default function RootLayout({

@@ -83,7 +83,7 @@ export default function Design() {
             <motion.label
               id={"design_topic_" + (index + 1).toString()}
               key={index}
-              className={`${lexend.className} relative flex w-full items-end gap-3 cursor-pointer`}
+              className={`${lexend.className} relative flex w-full cursor-pointer items-end gap-3`}
             >
               {/* Input */}
               <input
@@ -105,6 +105,7 @@ export default function Design() {
                       transition: { duration: 0.7 },
                     }}
                     className={`absolute ${colors[index]} bg-clip-text text-transparent`}
+                    style={{ WebkitBackgroundClip: "text" }}
                   >
                     <span className="flex">
                       {index + 1}
@@ -132,6 +133,7 @@ export default function Design() {
                         },
                       }}
                       className={`absolute whitespace-nowrap ${colors[index]} bg-clip-text text-transparent`}
+                      style={{ WebkitBackgroundClip: "text" }}
                     >
                       <span className="hidden lg:block">{item.topic}</span>
                     </motion.span>

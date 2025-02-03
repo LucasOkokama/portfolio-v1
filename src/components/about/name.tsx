@@ -110,6 +110,7 @@ export default function Name() {
         ref={nameRef}
         className={`${ubuntoSansMono.className} w-fit bg-gradient-to-r from-[#A259F6] to-[#0BB3D5] bg-clip-text text-[38px] font-extrabold text-transparent sm:text-[54px]`}
         data-original-name={originalName}
+        style={{ WebkitBackgroundClip: "text" }}
       ></h1>
     </motion.div>
   );

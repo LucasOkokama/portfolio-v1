@@ -74,3 +74,42 @@ For development, I used Next.js (React) for structuring the project, TailwindCSS
         <td></td>
     </tr>
 </table>
+
+
+
+# Requirements
+1. Install [`Node.js`](https://nodejs.org/en) and ensure it includes the `npm` package manager.
+
+
+
+# How to run locally
+1. Run a `git clone` of the repository:
+```
+git clone https://github.com/LucasOkokama/portfolio-v1.git
+```
+2. Open the `portfolio-v1` folder and install the dependencies:
+```
+npm install
+```
+3. Start the development server:
+```
+npm run dev
+```
+4. Access in the browser:
+```
+http://localhost:3000
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

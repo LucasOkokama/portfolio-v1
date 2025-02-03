@@ -80,13 +80,6 @@ export default function Base() {
     }
   };
 
-  // Increase the number of likes
-  const handleLiked = () => {
-    console.log(liked);
-    setLiked(true);
-    setCountLikes((prev) => prev + 1);
-  };
-
   return (
     <div
       className={`${theme === "light" ? "border-neutral-700 bg-[#ffffff]" : "border-neutral-700/80 bg-[#14181C]"} z-[2] h-full w-full overflow-auto border font-serif`}

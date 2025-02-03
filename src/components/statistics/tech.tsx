@@ -6,8 +6,6 @@ import Image from "next/image";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
-import { useEffect, useState } from "react";
-
 export default function Tech({ item }: { item: string }) {
   const { theme } = useThemeContext();
   // Logos that need color inversion for dark mode

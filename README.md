@@ -102,6 +102,18 @@ http://localhost:3000
 
 
 
+# Inspiration
+## Major Inspirations
+[Sankalp Sinha](https://sankalpsinha.com/)
+[Nelson Lai](https://honghong.me/)
+[Enji Kusnadi](https://www.enji.dev/)
+[Igor Kowalczyk](https://igorkowalczyk.dev/)
+[Ryan Aulia](https://aulianza.id/)
+
+## Additional Inspirations
+[Theodorus Clarence](https://theodorusclarence.com/)
+[p0](https://p0.inc/)
+[Sanidhya Verma](https://spaceportfolio.netlify.app/)
 
 
 

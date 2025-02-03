@@ -5,8 +5,8 @@ import { useState } from "react";
 export default function Base() {
   const { theme } = useDesignThemeContext();
   const [, setImageHovered] = useState(false);
-  const [liked, setLiked] = useState(false);
-  const [countLikes, setCountLikes] = useState(78);
+  const [liked] = useState(false);
+  const [countLikes] = useState(78);
 
   const tags = ["#AranhaVerso", "#Sony", "#Animação"];
   const stats = [

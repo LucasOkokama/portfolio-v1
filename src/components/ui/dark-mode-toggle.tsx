@@ -60,7 +60,7 @@ export default function DarkModeToggle() {
     }
 
     handleThemeChange();
-  }, [themeSelected, icons, setTheme, themes]);
+  }, [themeSelected]);
 
   // Shortcut to change the theme
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function DarkModeToggle() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [changeTheme]);
+  }, []);
 
   // Change the theme selected
   function changeTheme() {

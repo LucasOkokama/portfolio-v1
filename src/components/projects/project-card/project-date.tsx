@@ -24,8 +24,8 @@ export default function ProjectDate({
         return (
           <div className="flex items-center gap-2 whitespace-nowrap">
             <div className="relative">
-              <span className="absolute size-[10] animate-ping rounded-full bg-green-500 dark:bg-green-600"></span>
-              <span className="block size-[10] rounded-full bg-green-600 dark:bg-green-700"></span>
+              <span className="absolute size-[10px] animate-ping rounded-full bg-green-500 dark:bg-green-600"></span>
+              <span className="block size-[10px] rounded-full bg-green-600 dark:bg-green-700"></span>
             </div>
             <span
               className={`${lexend.className} text-sm text-neutral-600 dark:text-neutral-400`}

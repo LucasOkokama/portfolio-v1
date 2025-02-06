@@ -142,7 +142,7 @@ export default function Spacing() {
           <div
             className={`${theme === "light" ? "text-[#134aff]" : "text-[#134aff]"} mt-1 flex items-end justify-between`}
           >
-            <div className="flex gap-[10]">
+            <div className="flex gap-[10px]">
               {tags.map((tag, index) => (
                 <span key={index}>{tag}</span>
               ))}

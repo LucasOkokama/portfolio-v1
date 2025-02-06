@@ -151,7 +151,7 @@ export default function Typography() {
           <div
             className={`${theme === "light" ? "text-[#134aff]" : "text-[#134aff]"} ${poppins.className} mt-1 flex items-end justify-between text-sm`}
           >
-            <div className="flex gap-[10]">
+            <div className="flex gap-[10px]">
               {tags.map((tag, index) => (
                 <span key={index}>{tag}</span>
               ))}

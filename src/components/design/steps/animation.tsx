@@ -196,7 +196,7 @@ export default function Animation() {
           <div
             className={`${theme === "light" ? "text-sky-800/80" : "text-sky-700"} ${poppins.className} mt-1 flex items-end justify-between text-sm`}
           >
-            <div className="flex gap-[10]">
+            <div className="flex gap-[10px]">
               {tags.map((tag, index) => (
                 <motion.span
                   key={index}

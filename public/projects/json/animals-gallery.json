@@ -1,0 +1,26 @@
+{
+  "id": "animals-gallery",
+  "name": "Animals Gallery",
+  "type": "Projeto pessoal",
+  "intro": "Uma galeria de imagens de animais que representam um país específico.",
+  "info": [
+    "No projeto, é possível visualizar os animais nacionais de diversos países, juntamente com suas respectivas bandeiras.",
+    "Ao passar o mouse sobre o card do animal, um efeito de hover com degradê será aplicado.",
+    "Para acessar mais informações sobre o animal, basta clicar no card, e você será redirecionado para um artigo na Wikipédia."
+  ],
+  "funFact": "Primeiro projeto utilizando Sass, Webpack e Babel. O uso do Sass foi relativamente tranquilo, pois eu já tinha conhecimento em CSS.",
+  "techStack": [
+    "Babel",
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "Sass",
+    "Vercel",
+    "Webpack"
+  ],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/animals-gallery",
+  "deploy": "https://nationalanimals.vercel.app/",
+  "startDate": "2025-02-11",
+  "finishDate": "2025-02-15"
+}

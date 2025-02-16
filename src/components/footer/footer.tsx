@@ -21,7 +21,7 @@ export default function Footer() {
             dragConstraints={constraintsRef}
             whileTap={{ scale: 1.3 }}
             key={index}
-            className="w-7 cursor-pointer p-1"
+            className="w-7 cursor-grab p-1 active:cursor-grabbing"
             // Change svg color using filter
             style={{
               filter:

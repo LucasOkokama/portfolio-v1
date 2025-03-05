@@ -1,0 +1,18 @@
+{
+  "id": "home-book-app-aspnetmvc",
+  "name": "Home Book App",
+  "type": "Projeto pessoal",
+  "intro": "Sistema web para gestão de imóveis, desenvolvido com ASP.NET MVC e Clean Architecture, com CRUD e upload de imagens.",
+  "info": [
+    "Permite cadastro, edição, exclusão e visualização (CRUD) de imóveis para aluguel.",
+    "Segue a Clean Architecture, separando as responsabilidades em Infrastructure, Web, Domain e Application.",
+    "Suporta upload de imagens para melhor apresentação dos imóveis, além de permitir a associação de cômodos e a listagem de amenidades."
+  ],
+  "funFact": "Primeiro projeto utilizando .NET e SQL Server. Já havia ouvido falar de .NET, mas nunca soube do que se tratava. Achei bem parecido com Spring Boot MVC.",
+  "techStack": ["Bootstrap", "CSharp", "CSS", "HTML", "SQL Server", "dotNet"],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/home-book-app-aspnetmvc",
+  "deploy": null,
+  "startDate": "2025-02-19",
+  "finishDate": "2025-03-01"
+}

@@ -11,7 +11,7 @@ const cursorBlinking = {
 
 const roles = [
   {
-    text: "Desenvolvedor Frontend",
+    text: "Desenvolvedor Fullstack",
     background: "rgba(0, 179, 200 , 0.2)",
     color: "rgba(0, 179, 200 , 1)",
   },

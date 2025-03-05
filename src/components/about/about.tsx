@@ -67,11 +67,11 @@ export default function About() {
     },
     {
       icon: "book.png",
-      text: "Atualmente estudando NextJS, AngularJS e TailwindCSS.",
+      text: "Atualmente estudando React, Angular, Docker, Spring Boot e AspNet.",
     },
     {
       icon: "straw-hat.png",
-      text: "Tenho um blog de review de anime chamado <b><u><a href='https://korosenku.vercel.app/' target='_blank'>Korosenku</a></u></b>",
+      text: "Tenho um blog de reviews de anime chamado <b><u><a href='https://korosenku.vercel.app/' target='_blank'>Korosenku</a></u></b>",
     },
   ];
 
@@ -120,11 +120,11 @@ export default function About() {
               <p
                 className={`${ibmPlexMono.className} line-clamp-[12] max-w-xl text-[15px] leading-8 text-neutral-700 md:line-clamp-5 md:max-w-xl dark:text-neutral-400`}
               >
-                Sou um desenvolvedor frontend apaixonado por tecnologia e
-                design. Meu foco principal está em construir interfaces
-                intuitivas utilizando ferramentas como Angular, TailwindCSS,
-                NextJS e Figma, sempre buscando aliar beleza e funcionalidade
-                para criar experiências digitais únicas.
+                Sou um desenvolvedor fullstack apaixonado por tecnologia e
+                design. Meu foco está em construir soluções completas e
+                intuitivas, combinando ferramentas como Angular, TailwindCSS,
+                NextJS, Spring Boot, ASP.NET, Flask e Pandas. Busco sempre aliar
+                beleza e funcionalidade, criando experiências digitais únicas.
               </p>
             </div>
 

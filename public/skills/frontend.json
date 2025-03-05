@@ -41,6 +41,11 @@
       "name": "TailwindCSS",
       "file": "tailwindcss.svg",
       "link": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Bootstrap",
+      "file": "bootstrap.svg",
+      "link": "https://getbootstrap.com/"
     }
   ],
   [
@@ -53,6 +58,13 @@
       "name": "FuseJS",
       "file": "fusejs.svg",
       "link": "https://www.fusejs.io/"
+    }
+  ],
+  [
+    {
+      "name": "Sass",
+      "file": "sass.svg",
+      "link": "https://sass-lang.com/"
     }
   ]
 ]

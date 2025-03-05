@@ -1,0 +1,18 @@
+{
+  "id": "real-time-chat-signalr",
+  "name": "Chat em Tempo Real",
+  "type": "Projeto pessoal",
+  "intro": "Chat em tempo real com ASP.NET Web API, SignalR e React, que proporciona uma comunicação instantânea e responsiva entre os usuários.",
+  "info": [
+    "Na tela de login, o usuário escolhe seu nome e o nome da sala. Somente as pessoas da sala escolhida receberão mensagens enviadas nessa sala.",
+    "Suporta WebSockets internamente, garantindo entrega instantânea de mensagens entre os usuários.",
+    "As mensagens de chat são armazenadas em um dicionário, sem necessidade de banco de dados."
+  ],
+  "funFact": "Primeiro projeto utilizando SignalR. Fiquei surpreso com a simplicidade e eficiência da integração para comunicação em tempo real!",
+  "techStack": ["Bootstrap", "CSharp", "CSS", "HTML", "React", "dotNet"],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/real-time-chat-signalr",
+  "deploy": null,
+  "startDate": "2025-03-02",
+  "finishDate": "2025-03-04"
+}

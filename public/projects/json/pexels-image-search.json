@@ -1,0 +1,27 @@
+{
+  "id": "pexels-image-search",
+  "name": "Wemage",
+  "type": "Projeto pessoal",
+  "intro": "Site baseado em React que permite aos usuários pesquisar e visualizar fotos usando a API do Pexels.",
+  "info": [
+    "Usuários podem pesquisar imagens usando palavras-chave na caixa de pesquisa e baixá-las em alta qualidade.",
+    "As imagens são exibidas em masonry layout, garantindo uma navegação fluida e dinâmica.",
+    "Utiliza o sistema de paginação para evitar o carregamento excessivo de imagens de uma vez."
+  ],
+  "funFact": "Primeiro projeto utilizando Styled Components (css-in-js), masonry layout e sistema de paginação.",
+  "techStack": [
+    "CSS",
+    "HTML",
+    "React",
+    "Styled Components",
+    "TailwindCSS",
+    "Typescript",
+    "Vercel",
+    "Vite"
+  ],
+  "design": "https://www.figma.com/proto/4XOnKMPwSUb3F8eKU6V5j9/Unsplash-Image-Search?node-id=1-2&p=f&t=WyuvdZk1NbAvTCkh-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
+  "github": "https://github.com/LucasOkokama/pexels-image-search",
+  "deploy": "https://wemage.vercel.app/",
+  "startDate": "2025-03-14",
+  "finishDate": "2025-03-21"
+}

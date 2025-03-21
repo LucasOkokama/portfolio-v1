@@ -58,9 +58,19 @@
       "name": "FuseJS",
       "file": "fusejs.svg",
       "link": "https://www.fusejs.io/"
+    },
+    {
+      "name": "Styled Components",
+      "file": "styledcomponents.svg",
+      "link": "https://styled-components.com/"
     }
   ],
   [
+    {
+      "name": "Vite",
+      "file": "vite.svg",
+      "link": "https://vite.dev/"
+    },
     {
       "name": "Sass",
       "file": "sass.svg",

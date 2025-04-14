@@ -1,0 +1,29 @@
+{
+  "id": "unit-integration-test",
+  "name": "Unit Integration Test",
+  "type": "Projeto pessoal",
+  "intro": "Projeto para armazenar implementações de testes unitários e de integração em várias linguagens de programação.",
+  "info": [
+    "Projeto voltado para a prática e consolidação de testes unitários e de integração.",
+    "Explora diferentes ferramentas e abordagens de testes de software.",
+    "Funciona como repositório organizado para comparação e aprendizado de técnicas."
+  ],
+  "funFact": "Primeiro projeto focado apenas em testes de software. Comparar ferramentas e abordagens foi uma experiência bem interessante.",
+  "techStack": [
+    "Java",
+    "JavaScript",
+    "Jest",
+    "JUnit",
+    "Pytest",
+    "Python",
+    "React",
+    "Spring Boot",
+    "TypeScript",
+    "Vitest"
+  ],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/unit-integration-test",
+  "deploy": null,
+  "startDate": "2025-03-31",
+  "finishDate": "2025-04-12"
+}

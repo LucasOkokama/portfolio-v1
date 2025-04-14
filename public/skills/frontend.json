@@ -33,11 +33,6 @@
       "link": "https://nextjs.org/"
     },
     {
-      "name": "React",
-      "file": "react.svg",
-      "link": "https://react.dev/"
-    },
-    {
       "name": "TailwindCSS",
       "file": "tailwindcss.svg",
       "link": "https://tailwindcss.com/"
@@ -49,6 +44,11 @@
     }
   ],
   [
+    {
+      "name": "React",
+      "file": "react.svg",
+      "link": "https://react.dev/"
+    },
     {
       "name": "Motion",
       "file": "motion.svg",
@@ -63,6 +63,18 @@
       "name": "Styled Components",
       "file": "styledcomponents.svg",
       "link": "https://styled-components.com/"
+    }
+  ],
+  [
+    {
+      "name": "Jest",
+      "file": "jest.svg",
+      "link": "https://jestjs.io/"
+    },
+    {
+      "name": "Vitest",
+      "file": "vitest.svg",
+      "link": "https://vitest.dev/"
     }
   ],
   [

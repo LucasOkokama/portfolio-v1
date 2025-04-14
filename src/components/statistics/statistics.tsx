@@ -9,7 +9,7 @@ export default function Statistics() {
     {
       name: "Horas programando",
       icon: `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg>`,
-      value: "+500 horas",
+      value: "+540 horas",
     },
     {
       name: "Framework favorito",
@@ -48,9 +48,11 @@ export default function Statistics() {
   const firstTechs = [
     "Angular",
     "NextJS",
+    "Vitest",
     "Styled Components",
     "CSS",
     "Vercel",
+    "JUnit",
     "TailwindCSS",
     "VsCode",
     "Plotly",
@@ -69,11 +71,13 @@ export default function Statistics() {
     "Vercel",
     "VsCode",
     "Motion",
+    "JUnit",
     "NextJS",
     "Styled Components",
     "CSS",
     "Plotly",
     "Figma",
+    "Vitest",
     "Typescript",
     "Angular",
     "Pandas",
@@ -81,10 +85,12 @@ export default function Statistics() {
 
   const thirdTechs = [
     "TailwindCSS",
+    "Junit",
     "Vercel",
     "Motion",
     "VsCode",
     "Python",
+    "Vitest",
     "Angular",
     "Typescript",
     "Visual Studio",

@@ -53,6 +53,23 @@
       "name": "Plotly",
       "file": "plotly.svg",
       "link": "https://plotly.com/"
+    },
+    {
+      "name": "Matplotlib",
+      "file": "matplotlib.svg",
+      "link": "https://matplotlib.org/"
+    }
+  ],
+  [
+    {
+      "name": "JUnit",
+      "file": "junit.svg",
+      "link": "https://junit.org/"
+    },
+    {
+      "name": "Pytest",
+      "file": "pytest.svg",
+      "link": "https://docs.pytest.org/"
     }
   ],
   [

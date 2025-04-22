@@ -70,6 +70,16 @@
       "name": "Pytest",
       "file": "pytest.svg",
       "link": "https://docs.pytest.org/"
+    },
+    {
+      "name": "xUnit",
+      "file": "xunit.svg",
+      "link": "https://xunit.net/"
+    },
+    {
+      "name": "Selenium",
+      "file": "selenium.svg",
+      "link": "https://www.selenium.dev/"
     }
   ],
   [

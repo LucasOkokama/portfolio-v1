@@ -10,6 +10,8 @@
   ],
   "funFact": "Primeiro projeto focado apenas em testes de software. Comparar ferramentas e abordagens foi uma experiência bem interessante.",
   "techStack": [
+    "CSharp",
+    "Cypress",
     "Java",
     "JavaScript",
     "Jest",
@@ -17,9 +19,11 @@
     "Pytest",
     "Python",
     "React",
+    "Selenium",
     "Spring Boot",
     "TypeScript",
-    "Vitest"
+    "Vitest",
+    "xUnit"
   ],
   "design": null,
   "github": "https://github.com/LucasOkokama/unit-integration-test",

@@ -75,6 +75,11 @@
       "name": "Vitest",
       "file": "vitest.svg",
       "link": "https://vitest.dev/"
+    },
+    {
+      "name": "Cypress",
+      "file": "cypress.svg",
+      "link": "https://www.cypress.io/"
     }
   ],
   [

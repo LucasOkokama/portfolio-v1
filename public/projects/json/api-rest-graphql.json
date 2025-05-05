@@ -1,0 +1,29 @@
+{
+  "id": "api-rest-graphql",
+  "name": "API Rest GraphQL",
+  "type": "Projeto pessoal",
+  "intro": "Repositório para praticar o desenvolvimento de APIs REST e GraphQL com Node.js",
+  "info": [
+    "Projeto voltado à prática de desenvolvimento de APIs utilizando os modelos REST e GraphQL com Node.js.",
+    "Foco na exploração de padrões de projeto, comparação entre estilos de API e consolidação de boas práticas de backend.",
+    "Ambiente preparado para testes com diferentes bancos de dados, simulando interações reais de forma prática."
+  ],
+  "funFact": "Antes deste projeto de estudo, eu não sabia que existiam outras formas de requisitar dados de uma API além do REST.",
+  "techStack": [
+    "Apollo GraphQL",
+    "Docker",
+    "GraphQL",
+    "JavaScript",
+    "NodeJS",
+    "PostgreSQL",
+    "Prisma",
+    "React",
+    "SQLite",
+    "TypeScript"
+  ],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/api-rest-graphql",
+  "deploy": null,
+  "startDate": "2025-04-23",
+  "finishDate": "2025-05-02"
+}

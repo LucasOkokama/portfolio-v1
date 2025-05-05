@@ -48,11 +48,6 @@
       "name": "PostgreSQL",
       "file": "postgresql.svg",
       "link": "https://www.postgresql.org/"
-    },
-    {
-      "name": "SQL Server",
-      "file": "sqlserver.svg",
-      "link": "https://www.microsoft.com/en-us/sql-server"
     }
   ],
   [
@@ -60,11 +55,6 @@
       "name": "Postman",
       "file": "postman.svg",
       "link": "https://www.postman.com/"
-    },
-    {
-      "name": "Docker",
-      "file": "docker.svg",
-      "link": "https://www.docker.com/"
     }
   ],
   [

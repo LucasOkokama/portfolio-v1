@@ -67,11 +67,6 @@
   ],
   [
     {
-      "name": "Jest",
-      "file": "jest.svg",
-      "link": "https://jestjs.io/"
-    },
-    {
       "name": "Vitest",
       "file": "vitest.svg",
       "link": "https://vitest.dev/"

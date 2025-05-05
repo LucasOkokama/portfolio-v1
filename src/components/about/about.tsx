@@ -67,7 +67,7 @@ export default function About() {
     },
     {
       icon: "book.png",
-      text: "Atualmente estudando React, Angular, Docker, Spring Boot e AspNet.",
+      text: "Estudando Autenticação e Autorização (JWT, Session, OAuth2)",
     },
     {
       icon: "straw-hat.png",
@@ -122,9 +122,10 @@ export default function About() {
               >
                 Sou um desenvolvedor fullstack apaixonado por tecnologia e
                 design. Meu foco está em construir soluções completas e
-                intuitivas, combinando ferramentas como Angular, TailwindCSS,
-                NextJS, Spring Boot, ASP.NET, Flask e Pandas. Busco sempre aliar
-                beleza e funcionalidade, criando experiências digitais únicas.
+                intuitivas, combinando ferramentas como Angular, React, NextJS,
+                TailwindCSS, Spring Boot, Express e MySQL. Busco
+                sempre aliar beleza e funcionalidade, criando experiências
+                digitais únicas.
               </p>
             </div>
 

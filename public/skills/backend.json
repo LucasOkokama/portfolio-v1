@@ -9,21 +9,6 @@
       "name": "Java",
       "file": "java.svg",
       "link": "https://www.java.com/en/"
-    },
-    {
-      "name": "PHP",
-      "file": "php.svg",
-      "link": "https://www.php.net/"
-    },
-    {
-      "name": "C",
-      "file": "c.svg",
-      "link": "#"
-    },
-    {
-      "name": "C Sharp",
-      "file": "csharp.svg",
-      "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
     }
   ],
   [
@@ -31,19 +16,14 @@
       "name": "Spring Boot",
       "file": "springboot.svg",
       "link": "https://spring.io/"
-    },
-    {
-      "name": "dotNet",
-      "file": "dotnet.svg",
-      "link": "https://dotnet.microsoft.com/pt-br/"
-    },
-    {
-      "name": "Flask",
-      "file": "flask.svg",
-      "link": "https://flask.palletsprojects.com/en/stable/"
     }
   ],
   [
+    {
+      "name": "Prisma",
+      "file": "prisma.svg",
+      "link": "https://www.prisma.io/"
+    },
     {
       "name": "Pandas",
       "file": "pandas.svg",
@@ -70,28 +50,13 @@
       "name": "Pytest",
       "file": "pytest.svg",
       "link": "https://docs.pytest.org/"
-    },
-    {
-      "name": "xUnit",
-      "file": "xunit.svg",
-      "link": "https://xunit.net/"
-    },
-    {
-      "name": "Selenium",
-      "file": "selenium.svg",
-      "link": "https://www.selenium.dev/"
     }
   ],
   [
     {
-      "name": "Webpack",
-      "file": "webpack.svg",
-      "link": "https://webpack.js.org/"
-    },
-    {
-      "name": "Babel",
-      "file": "babel.svg",
-      "link": "https://babeljs.io/"
+      "name": "Node.js",
+      "file": "nodejs.svg",
+      "link": "https://nodejs.org/pt"
     }
   ]
 ]

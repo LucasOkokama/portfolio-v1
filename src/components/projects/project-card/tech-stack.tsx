@@ -28,7 +28,15 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
   const { setSearchValue } = useSearchContext();
 
   // Logos that need color inversion for dark mode
-  const blackWhiteIcons = ["flask", "pandas", "vercel", "nextjs", "motion"];
+  const blackWhiteIcons = [
+    "flask",
+    "pandas",
+    "vercel",
+    "nextjs",
+    "motion",
+    "apollo graphql",
+    "prisma",
+  ];
 
   // Function that formats the icon name to locate it in the files
   function formatItemName(name: string) {

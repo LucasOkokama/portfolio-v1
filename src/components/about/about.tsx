@@ -67,11 +67,11 @@ export default function About() {
     },
     {
       icon: "book.png",
-      text: "Estudando Autenticação e Autorização (JWT, Session, OAuth2)",
+      text: "Estudando SQL Server e Java.",
     },
     {
       icon: "straw-hat.png",
-      text: "Tenho um blog de reviews de anime chamado <b><u><a href='https://korosenku.vercel.app/' target='_blank'>Korosenku</a></u></b>",
+      text: "Tenho um blog de reviews de anime chamado <b><u><a href='https://korosenku.vercel.app/' target='_blank'>Korosenku</a></u></b>.",
     },
   ];
 

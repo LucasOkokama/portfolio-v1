@@ -29,13 +29,14 @@ export default function TechStack({ techStack }: { techStack: string[] }) {
 
   // Logos that need color inversion for dark mode
   const blackWhiteIcons = [
-    "flask",
-    "pandas",
-    "vercel",
-    "nextjs",
-    "motion",
     "apollo graphql",
+    "express",
+    "flask",
+    "motion",
+    "nextjs",
+    "pandas",
     "prisma",
+    "vercel",
   ];
 
   // Function that formats the icon name to locate it in the files

@@ -1,0 +1,30 @@
+{
+  "id": "authentication-authorization",
+  "name": "Authentication & Authorization",
+  "type": "Projeto pessoal",
+  "intro": "Estudo sobre autenticação e autorização, com foco em segurança, escalabilidade e usabilidade.",
+  "info": [
+    "Explora conceitos essenciais de autenticação e autorização com exemplos práticos.",
+    "Demonstra o uso de JWT, sessões, cookies e hash de senhas com diferentes tecnologias.",
+    "Permite comparar abordagens de controle de acesso em ambientes variados como Spring Boot e Express."
+  ],
+  "funFact": "Foi meu primeiro contato mais aprofundado com autenticação via JWT e gerenciamento de sessões com Redis.",
+  "techStack": [
+    "Docker",
+    "Express",
+    "JWT",
+    "Java",
+    "JavaScript",
+    "PostgreSQL",
+    "Prisma",
+    "Redis",
+    "SpringBoot",
+    "SpringSecurity",
+    "TypeScript"
+  ],
+  "design": null,
+  "github": "https://github.com/LucasOkokama/authentication-authorization",
+  "deploy": null,
+  "startDate": "2025-05-04",
+  "finishDate": "-"
+}

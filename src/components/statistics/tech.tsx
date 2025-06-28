@@ -9,7 +9,7 @@ const lexend = Lexend({ subsets: ["latin"] });
 export default function Tech({ item }: { item: string }) {
   const { theme } = useThemeContext();
   // Logos that need color inversion for dark mode
-  const blackWhiteIcons = ["flask", "pandas", "vercel", "nextjs", "motion"];
+  const blackWhiteIcons = ["flask", "pandas", "vercel", "nextjs", "motion", "express"];
 
   // Function that formats the icon name to locate it in the files
   function formatItemName(name: string) {

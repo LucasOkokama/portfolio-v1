@@ -42,17 +42,27 @@
   ],
   [
     {
+      "name": "SQLServer",
+      "file": "sqlserver.svg",
+      "link": "https://www.microsoft.com/en-us/sql-server/"
+    },
+    {
+      "name": "MySQL",
+      "file": "mysql.svg",
+      "link": "https://www.mysql.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "file": "postgresql.svg",
+      "link": "https://www.postgresql.org/"
+    }
+  ],
+  [
+    {
       "name": "JUnit",
       "file": "junit.svg",
       "link": "https://junit.org/"
     },
-    {
-      "name": "Pytest",
-      "file": "pytest.svg",
-      "link": "https://docs.pytest.org/"
-    }
-  ],
-  [
     {
       "name": "Node.js",
       "file": "nodejs.svg",

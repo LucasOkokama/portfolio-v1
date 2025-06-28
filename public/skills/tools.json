@@ -40,18 +40,6 @@
   ],
   [
     {
-      "name": "MySQL",
-      "file": "mysql.svg",
-      "link": "https://www.mysql.com/"
-    },
-    {
-      "name": "PostgreSQL",
-      "file": "postgresql.svg",
-      "link": "https://www.postgresql.org/"
-    }
-  ],
-  [
-    {
       "name": "Postman",
       "file": "postman.svg",
       "link": "https://www.postman.com/"
@@ -64,9 +52,24 @@
       "link": "https://git-scm.com/"
     },
     {
+      "name": "GitHub",
+      "file": "github.svg",
+      "link": "https://github.com/"
+    },
+    {
       "name": "Vercel",
       "file": "vercel.svg",
       "link": "https://vercel.com/"
+    },
+    {
+      "name": "RocketChat",
+      "file": "rocketchat.svg",
+      "link": "https://www.rocket.chat/"
+    },
+    {
+      "name": "RustDesk",
+      "file": "rustdesk.svg",
+      "link": "https://rustdesk.com/"
     }
   ]
 ]

@@ -56,6 +56,7 @@ export default function Statistics() {
     "TailwindCSS",
     "VsCode",
     "Plotly",
+    "Express",
     "Figma",
     "Python",
     "Motion",
@@ -79,6 +80,7 @@ export default function Statistics() {
     "Figma",
     "Vitest",
     "Typescript",
+    "Express",
     "Angular",
     "Pandas",
   ];
@@ -86,6 +88,7 @@ export default function Statistics() {
   const thirdTechs = [
     "TailwindCSS",
     "Junit",
+    "Express",
     "Vercel",
     "Motion",
     "VsCode",
